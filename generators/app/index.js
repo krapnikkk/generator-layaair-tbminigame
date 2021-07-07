@@ -27,7 +27,7 @@ module.exports = class extends Generator {
     //   this.props = props;
     // });
     this.log(
-      yosay(`欢迎使用\n${chalk.green('generator-layaair')}创建项目 !`)
+      yosay(`欢迎使用\n${chalk.green('generator-layaair-tbminigame')}`)
     );
 
     const prompts = [
@@ -52,10 +52,10 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('.gitignore'),
-      this.destinationPath(`${this.props.appName}/.gitignore`)
-    );
+    // this.fs.copy(
+    //   this.templatePath('.gitignore'),
+    //   this.destinationPath(`${this.props.appName}/.gitignore`)
+    // );
     this.fs.copy(
       this.templatePath(`example.laya`),
       this.destinationPath(`${this.props.appName}/example.laya`)
@@ -65,8 +65,8 @@ module.exports = class extends Generator {
       this.destinationPath(`${this.props.appName}/readme.md`)
     );
     this.fs.copy(
-      this.templatePath('.gitignore'),
-      this.destinationPath(`${this.props.appName}/.gitignore`)
+      this.templatePath('gitignore'),
+      this.destinationPath(`${this.props.appName}/gitignore`)
     );
     this.fs.copy(this.templatePath(".laya"), this.destinationPath(`${this.props.appName}/.laya`));
     this.fs.copy(this.templatePath(".vscode"), this.destinationPath(`${this.props.appName}/.vscode`));
@@ -74,6 +74,7 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath("laya"), this.destinationPath(`${this.props.appName}/laya`));
     this.fs.copy(this.templatePath("libs"), this.destinationPath(`${this.props.appName}/libs`));
     this.fs.copy(this.templatePath("src"), this.destinationPath(`${this.props.appName}/src`));
+    this.fs.copy(this.templatePath("tools"), this.destinationPath(`${this.props.appName}/tools`));
 
     }
 
@@ -85,6 +86,7 @@ module.exports = class extends Generator {
 
   install() {
     fs.renameSync(this.destinationPath(`${this.props.appName}/example.laya`), this.destinationPath(`${this.props.appName}/${this.props.appName}.laya`));
+    fs.renameSync(this.destinationPath(`${this.props.appName}/gitignore`), this.destinationPath(`${this.props.appName}/.gitignore`));
     fs.writeFileSync(this.destinationPath(`${this.props.appName}/${this.props.appName}.laya`),`{"proName":"${this.props.appName}","engineType":0,"proType":1,"layaProType":1,"version":"2.1.0"}`)
   
     // this.installDependencies();
