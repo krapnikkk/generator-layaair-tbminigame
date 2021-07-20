@@ -68,6 +68,10 @@ module.exports = class extends Generator {
       this.templatePath('gitignore'),
       this.destinationPath(`${this.props.appName}/gitignore`)
     );
+    this.fs.copy(
+      this.templatePath('tsconfig.json'),
+      this.destinationPath(`${this.props.appName}/tsconfig.json`)
+    );
     this.fs.copy(this.templatePath(".laya"), this.destinationPath(`${this.props.appName}/.laya`));
     this.fs.copy(this.templatePath(".vscode"), this.destinationPath(`${this.props.appName}/.vscode`));
     this.fs.copy(this.templatePath("bin"), this.destinationPath(`${this.props.appName}/bin`));
