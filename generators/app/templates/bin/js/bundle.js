@@ -48,7 +48,7 @@ var polea = (() => {
     EUILayer2["Native"] = "Native";
   })(EUILayer || (EUILayer = {}));
 
-  // src/config/Config.ts
+  // src/core/config/Config.ts
   var Config = class {
   };
   Config.version = "0.0.1";
@@ -57,19 +57,307 @@ var polea = (() => {
   Config.platformArr = [Platform.MiniGame, Platform.TBMiniGame];
   Config.baseRoot = "https://xiaoailingdong.oss-cn-shenzhen.aliyuncs.com/CClient/Test/res/fgui/";
 
+  // src/core/ui/UIBase.ts
+  var UIBase = class extends fgui.Window {
+    onInit() {
+      console.log("onInit");
+    }
+    dispose() {
+      super.dispose();
+    }
+  };
+
+  // src/module/Invitation/UI_Main.ts
+  var UI_Main = class extends UIBase {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "Main");
+    }
+    onConstruct() {
+      this.m_bg = this.getChildAt(0);
+      this.m_loader_tips = this.getChildAt(1);
+      this.m_panel_date_activity = this.getChildAt(2);
+      this.m_panel_ranking = this.getChildAt(3);
+      this.m_btn_invite = this.getChildAt(4);
+      this.m_txt_tips_invite_count = this.getChildAt(5);
+      this.m_btn_rule = this.getChildAt(6);
+      this.m_bg_polyfill = this.getChildAt(7);
+      this.m_list_recommendation = this.getChildAt(8);
+      this.m_btn_jackpot = this.getChildAt(9);
+      this.m_btn_prize = this.getChildAt(10);
+      this.m_group_float = this.getChildAt(11);
+    }
+  };
+  UI_Main.URL = "ui://aksov0e9m5i80";
+
+  // src/module/Invitation.ts
+  var Invitation = class extends UI_Main {
+    constructor() {
+      super();
+    }
+    onInit() {
+      super.onInit();
+    }
+    init() {
+    }
+    setup() {
+      this.contentPane = UI_Main.createInstance();
+    }
+    onConstruct() {
+      super.onConstruct();
+      console.log("onConstruct");
+      this.onClick(this, this.onTouch);
+    }
+    onTouch() {
+      console.log("click");
+    }
+  };
+
   // src/core/ui/UIConfig.ts
   var UIConfig = class {
   };
   UIConfig.baseRoot = "";
   UIConfig.fguiFileExtension = "bin";
+  UIConfig.startScene = "Invitation";
   UIConfig.fguiFileArr = [
-    ""
+    {
+      "name": "Invitation"
+    }
   ];
+
+  // src/Event.ts
+  var Event = class {
+  };
+  Event.ON_PROGRESS = "ON_PROGRESS";
+
+  // src/module/Invitation/UI_btn_common_base.ts
+  var UI_btn_common_base = class extends fgui.GButton {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "btn_common_base");
+    }
+    onConstruct() {
+      this.m_status = this.getControllerAt(0);
+    }
+  };
+  UI_btn_common_base.URL = "ui://aksov0e9m5i810";
+
+  // src/module/Invitation/UI_panel_date_activity.ts
+  var UI_panel_date_activity = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "panel_date_activity");
+    }
+    onConstruct() {
+      this.m_status = this.getControllerAt(0);
+      this.m_txt_count = this.getChildAt(4);
+      this.m_txt_date = this.getChildAt(5);
+      this.m_txt_time = this.getChildAt(6);
+      this.m_txt_desc_1 = this.getChildAt(7);
+      this.m_txt_desc_2 = this.getChildAt(8);
+      this.m_txt_desc_3 = this.getChildAt(9);
+      this.m_txt_desc_4 = this.getChildAt(10);
+      this.m_txt__active = this.getChildAt(11);
+      this.m_txt_finish = this.getChildAt(12);
+    }
+  };
+  UI_panel_date_activity.URL = "ui://aksov0e9m5i83";
+
+  // src/module/Invitation/UI_panel_ranking.ts
+  var UI_panel_ranking = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "panel_ranking");
+    }
+    onConstruct() {
+      this.m_tab = this.getControllerAt(0);
+      this.m_bg = this.getChildAt(0);
+      this.m_btn_tab_rank = this.getChildAt(1);
+      this.m_btn_tab_invitation = this.getChildAt(2);
+      this.m_list_rank = this.getChildAt(3);
+      this.m_list_invitation = this.getChildAt(4);
+    }
+  };
+  UI_panel_ranking.URL = "ui://aksov0e9m5i8a";
+
+  // src/module/Invitation/UI_btn_tab_base.ts
+  var UI_btn_tab_base = class extends fgui.GButton {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "btn_tab_base");
+    }
+    onConstruct() {
+      this.m_triangle = this.getChildAt(3);
+    }
+  };
+  UI_btn_tab_base.URL = "ui://aksov0e9m5i8c";
+
+  // src/module/Invitation/UI_list_rank.ts
+  var UI_list_rank = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "list_rank");
+    }
+    onConstruct() {
+      this.m_status = this.getControllerAt(0);
+      this.m_txt_default = this.getChildAt(0);
+      this.m_list_rank = this.getChildAt(1);
+      this.m_item = this.getChildAt(2);
+    }
+  };
+  UI_list_rank.URL = "ui://aksov0e9m5i8e";
+
+  // src/module/Invitation/UI_list_item_rank.ts
+  var UI_list_item_rank = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "list_item_rank");
+    }
+    onConstruct() {
+      this.m_txt_number = this.getChildAt(0);
+      this.m_bg_avatar = this.getChildAt(1);
+      this.m_loader_avatar = this.getChildAt(2);
+      this.m_txt_nickname = this.getChildAt(3);
+      this.m_txt_invitation = this.getChildAt(4);
+      this.m_loader_award = this.getChildAt(5);
+      this.m_line = this.getChildAt(6);
+    }
+  };
+  UI_list_item_rank.URL = "ui://aksov0e9m5i8f";
+
+  // src/module/Invitation/UI_loader_avatar.ts
+  var UI_loader_avatar = class extends fgui.GLabel {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "loader_avatar");
+    }
+    onConstruct() {
+      this.m_mask = this.getChildAt(0);
+    }
+  };
+  UI_loader_avatar.URL = "ui://aksov0e9m5i8k";
+
+  // src/module/Invitation/UI_loader_award.ts
+  var UI_loader_award = class extends fgui.GLabel {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "loader_award");
+    }
+    onConstruct() {
+      this.m_frame = this.getChildAt(0);
+      this.m_loader_award = this.getChildAt(1);
+    }
+  };
+  UI_loader_award.URL = "ui://aksov0e9m5i8m";
+
+  // src/module/Invitation/UI_item_record.ts
+  var UI_item_record = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "item_record");
+    }
+    onConstruct() {
+      this.m_ranking = this.getControllerAt(0);
+      this.m_prize = this.getControllerAt(1);
+      this.m_bg = this.getChildAt(0);
+      this.m_txt_number = this.getChildAt(1);
+      this.m_bg_avatar = this.getChildAt(2);
+      this.m_loader_avatar = this.getChildAt(3);
+      this.m_txt_nickname = this.getChildAt(4);
+      this.m_txt_invitation = this.getChildAt(5);
+      this.m_loader_award = this.getChildAt(6);
+      this.m_txt_rank_bg = this.getChildAt(7);
+      this.m_txt_rank = this.getChildAt(8);
+    }
+  };
+  UI_item_record.URL = "ui://aksov0e9m5i8p";
+
+  // src/module/Invitation/UI_list_invitation.ts
+  var UI_list_invitation = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "list_invitation");
+    }
+    onConstruct() {
+      this.m_status = this.getControllerAt(0);
+      this.m_txt_invitation = this.getChildAt(0);
+      this.m_list_invitation = this.getChildAt(1);
+      this.m_txt_tips_title = this.getChildAt(2);
+      this.m_txt_tips_desc = this.getChildAt(3);
+      this.m_txt_tips = this.getChildAt(4);
+    }
+  };
+  UI_list_invitation.URL = "ui://aksov0e9m5i8s";
+
+  // src/module/Invitation/UI_list_item_invitation.ts
+  var UI_list_item_invitation = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "list_item_invitation");
+    }
+    onConstruct() {
+      this.m_bg_avatar = this.getChildAt(0);
+      this.m_loader_avatar = this.getChildAt(1);
+      this.m_txt_nickname = this.getChildAt(2);
+      this.m_txt_date = this.getChildAt(3);
+      this.m_line = this.getChildAt(4);
+    }
+  };
+  UI_list_item_invitation.URL = "ui://aksov0e9m5i8t";
+
+  // src/module/Invitation/UI_btn_invite.ts
+  var UI_btn_invite = class extends fgui.GButton {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "btn_invite");
+    }
+    onConstruct() {
+      this.m_scale = this.getTransitionAt(0);
+    }
+  };
+  UI_btn_invite.URL = "ui://aksov0e9m5i8u";
+
+  // src/module/Invitation/UI_list_item_recommendation.ts
+  var UI_list_item_recommendation = class extends fgui.GComponent {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "list_item_recommendation");
+    }
+    onConstruct() {
+      this.m_bg = this.getChildAt(0);
+      this.m_loader_goods = this.getChildAt(1);
+      this.m_txt_goodsName = this.getChildAt(2);
+      this.m_txt_prize = this.getChildAt(3);
+      this.m_btn_view = this.getChildAt(4);
+      this.m_btn_collect = this.getChildAt(5);
+    }
+  };
+  UI_list_item_recommendation.URL = "ui://aksov0e9m5i8y";
+
+  // src/module/Invitation/UI_loader_goods.ts
+  var UI_loader_goods = class extends fgui.GLabel {
+    static createInstance() {
+      return fgui.UIPackage.createObject("Invitation", "loader_goods");
+    }
+    onConstruct() {
+      this.m_mask = this.getChildAt(0);
+    }
+  };
+  UI_loader_goods.URL = "ui://aksov0e9m5i8z";
+
+  // src/module/Invitation/InvitationBinder.ts
+  var InvitationBinder = class {
+    static bindAll() {
+      fgui.UIObjectFactory.setExtension(Invitation.URL, Invitation);
+      fgui.UIObjectFactory.setExtension(UI_btn_common_base.URL, UI_btn_common_base);
+      fgui.UIObjectFactory.setExtension(UI_panel_date_activity.URL, UI_panel_date_activity);
+      fgui.UIObjectFactory.setExtension(UI_panel_ranking.URL, UI_panel_ranking);
+      fgui.UIObjectFactory.setExtension(UI_btn_tab_base.URL, UI_btn_tab_base);
+      fgui.UIObjectFactory.setExtension(UI_list_rank.URL, UI_list_rank);
+      fgui.UIObjectFactory.setExtension(UI_list_item_rank.URL, UI_list_item_rank);
+      fgui.UIObjectFactory.setExtension(UI_loader_avatar.URL, UI_loader_avatar);
+      fgui.UIObjectFactory.setExtension(UI_loader_award.URL, UI_loader_award);
+      fgui.UIObjectFactory.setExtension(UI_item_record.URL, UI_item_record);
+      fgui.UIObjectFactory.setExtension(UI_list_invitation.URL, UI_list_invitation);
+      fgui.UIObjectFactory.setExtension(UI_list_item_invitation.URL, UI_list_item_invitation);
+      fgui.UIObjectFactory.setExtension(UI_btn_invite.URL, UI_btn_invite);
+      fgui.UIObjectFactory.setExtension(UI_list_item_recommendation.URL, UI_list_item_recommendation);
+      fgui.UIObjectFactory.setExtension(UI_loader_goods.URL, UI_loader_goods);
+    }
+  };
 
   // src/core/ui/UIManager.ts
   var UIManager = class {
     constructor() {
       this.windowMap = new Map();
+      this._loadedCount = 0;
+      this._totalResCount = 0;
       if (UIManager._inst) {
         throw "singleton class is not use new constructor!";
       }
@@ -81,8 +369,31 @@ var polea = (() => {
       return this._inst;
     }
     init() {
-      fgui.UIConfig.packageFileExtension = UIConfig.fguiFileExtension;
+      this.initConfig();
+      this.loadUIRes();
       Laya.stage.addChild(fgui.GRoot.inst.displayObject);
+    }
+    initConfig() {
+      fgui.UIConfig.packageFileExtension = UIConfig.fguiFileExtension;
+    }
+    loadUIRes() {
+      this._totalResCount = UIConfig.fguiFileArr.length;
+      for (let i = 0; i < this._totalResCount; i++) {
+        let res = UIConfig.fguiFileArr[i];
+        let pkgName = res.name;
+        InvitationBinder.bindAll();
+        fgui.UIPackage.loadPackage(`${Config.baseRoot}${pkgName}`, Laya.Handler.create(this, this.onUILoaded));
+      }
+    }
+    onUILoaded() {
+      this._loadedCount++;
+      Laya.stage.event(Event.ON_PROGRESS, [this._loadedCount, this._totalResCount]);
+      if (this._loadedCount == this._totalResCount) {
+        console.log("Invitation");
+        let view = new Invitation();
+        view.setup();
+        fgui.GRoot.inst.addChild(view.contentPane);
+      }
     }
     add(window2) {
       this.windowMap.set(window2.url, window2);
@@ -171,12 +482,10 @@ var polea = (() => {
     initConfig() {
       this.initPlatform();
       let resConfig = false;
-      this.loadUIRes();
       console.log(`\u5F53\u524D\u7248\u672C\uFF1A${Config.version}\uFF0C\u73AF\u5883\u5E73\u53F0\uFF1A${Config.platform}`);
     }
     initPlatform() {
       let platform = Platform.Web;
-      console.log(Config.platformArr);
       if (Laya.Browser._isMiniGame) {
         for (let i = 0; i < Config.platformArr.length; i++) {
           let item = Config.platformArr[i];
@@ -189,17 +498,10 @@ var polea = (() => {
       return platform;
     }
     init() {
-      Laya.stage.addChild(fgui.GRoot.inst.displayObject);
       UIManager.inst.init();
       DataManager.inst.init();
     }
-    loadUIRes() {
-      Laya.stage.addChild(fgui.GRoot.inst.displayObject);
-      fgui.UIPackage.loadPackage(`${Config.baseRoot}Invitation`, Laya.Handler.create(this, this.onUILoaded));
-    }
     onUILoaded() {
-      let view = fgui.UIPackage.createObject("Invitation", "Main");
-      fgui.GRoot.inst.addChild(view);
     }
   };
 

@@ -1,4 +1,4 @@
-import { Env, Platform } from "../enum/enum";
+import { Env, Platform } from "../../enum/enum";
 
 export default class Config {
     // 项目相关配置

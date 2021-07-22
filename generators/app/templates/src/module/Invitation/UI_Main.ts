@@ -5,8 +5,9 @@
 import UI_panel_date_activity from "./UI_panel_date_activity";
 import UI_panel_ranking from "./UI_panel_ranking";
 import UI_btn_invite from "./UI_btn_invite";
+import UIBase from "../../core/ui/UIBase";
 
-export default class UI_Main extends fgui.GComponent {
+export default class UI_Main extends UIBase {
 
 	public m_bg: fgui.GImage;
 	public m_loader_tips: fgui.GLoader;
