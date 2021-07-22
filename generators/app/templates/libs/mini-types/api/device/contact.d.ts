@@ -1,7 +1,7 @@
 /**
  * @file 添加手机联系人
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type AddPhoneContactSuccessResult =
     | {
         readonly success: true

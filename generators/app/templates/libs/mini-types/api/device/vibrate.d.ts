@@ -1,7 +1,7 @@
 /**
  * @file 震动
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IVibrateOptions {
     success?(): void
   }

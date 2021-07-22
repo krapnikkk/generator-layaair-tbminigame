@@ -1,7 +1,7 @@
 /**
  * @file 获取用户手机号
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetPhoneNumberSuccessResult {
     /**
      * 完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理

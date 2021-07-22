@@ -1,7 +1,7 @@
 /**
  * @file 联系人
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IChoosePhoneContactSuccessResult {
     /**
      * 选中的联系人姓名

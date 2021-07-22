@@ -1,4 +1,4 @@
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   /**
    * 获取基础库版本号，仅供参考，代码逻辑请不要依赖这个值。
    */

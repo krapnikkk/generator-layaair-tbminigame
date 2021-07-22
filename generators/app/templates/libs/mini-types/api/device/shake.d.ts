@@ -1,7 +1,7 @@
 /**
  * @file 摇一摇
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IWatchShakeOptions {
     success(): void
   }

@@ -1,7 +1,7 @@
 /**
  * @file 滚动
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IPageScrollToOptions {
     /**
      * 滚动到页面的目标位置，单位 px。使用 my.pageScrollTo 跳转小程序顶部时，必须将 scrollTop 值设为大于 0，方可实现跳转

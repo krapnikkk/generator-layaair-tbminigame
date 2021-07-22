@@ -1,7 +1,7 @@
 /**
  * @file 加速度计
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOnAccelerometerChangeEvent {
     /**
      * X 轴

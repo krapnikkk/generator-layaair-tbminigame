@@ -1,7 +1,7 @@
 /**
  * @file 网络状态
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type INetworkType =
     | 'UNKNOWN'
     | 'NOTREACHABLE'

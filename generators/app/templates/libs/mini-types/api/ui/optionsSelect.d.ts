@@ -1,4 +1,4 @@
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOptionsSelectSuccessResult {
     /**
      * 选项一选择的值

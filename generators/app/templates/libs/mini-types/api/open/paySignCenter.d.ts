@@ -1,7 +1,7 @@
 /**
  * @file 支付代扣签约
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IPaySignCenterOptions {
     signStr: string
 

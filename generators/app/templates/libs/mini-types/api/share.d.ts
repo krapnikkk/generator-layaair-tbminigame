@@ -1,7 +1,7 @@
 /**
  * @file 分享
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IHideShareMenuOptions {
     /**
      * 调用成功的回调函数

@@ -1,7 +1,7 @@
 /**
  * @file 设置
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type SettingScopeList =
     | 'userInfo'
     | 'location'

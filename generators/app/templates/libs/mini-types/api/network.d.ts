@@ -1,7 +1,7 @@
 /**
  * @file 网络
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IHttpRequestSuccessResult {
     /**
      * 响应数据，格式取决于请求时的 dataType 参数

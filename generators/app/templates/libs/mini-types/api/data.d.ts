@@ -1,7 +1,7 @@
 /**
  * @file 数据安全
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IRSASuccessResult {
     /**
      * 经过处理过后得到的文本，加密为Base64编码文本，解密为原始文本

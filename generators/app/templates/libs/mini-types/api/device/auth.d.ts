@@ -1,7 +1,7 @@
 /**
  * @file 权限引导
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type AuthType =
     | 'BACKGROUNDER'
     | 'SHORTCUT'

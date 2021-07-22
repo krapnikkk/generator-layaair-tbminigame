@@ -1,7 +1,7 @@
 /**
  * @file 动画
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   /* tslint:disable:no-empty-interface */
   interface IAnimationInfo {}
 

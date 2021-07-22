@@ -1,7 +1,7 @@
 /**
  * @file 键盘
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   export interface my {
     /**
      * 隐藏键盘。

@@ -1,7 +1,7 @@
 /**
  * @file 拨打电话
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IMakePhoneCallOptions {
     /**
      * 电话号码

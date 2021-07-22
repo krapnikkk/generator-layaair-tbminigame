@@ -1,7 +1,7 @@
 /**
  * @file 下拉刷新
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IStartPullDownRefreshOptions {
     success?: () => void
     fail?: () => void

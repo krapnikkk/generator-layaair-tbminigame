@@ -1,7 +1,7 @@
 /**
  * 文本风险识别
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type TextRiskIdentificationType = 'keyword' | '0' | '1' | '2' | '3'
 
   interface ITextRiskIdentificationSuccessResult {

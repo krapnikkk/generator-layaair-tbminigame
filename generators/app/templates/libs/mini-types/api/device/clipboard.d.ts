@@ -1,7 +1,7 @@
 /**
  * @file 剪贴板
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IClipboardOptions {
     /**
      * 调用成功的回调函数

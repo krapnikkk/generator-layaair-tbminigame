@@ -4,7 +4,7 @@
 // tslint:disable-next-line:no-bad-reference
 /// <reference path="../../common/IFailResult.d.ts" />
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetKeepScreenOnSuccessResult {
     brightness: number
     success: boolean

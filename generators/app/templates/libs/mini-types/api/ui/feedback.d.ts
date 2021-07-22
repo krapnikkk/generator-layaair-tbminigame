@@ -1,7 +1,7 @@
 /**
  * @file 交互反馈
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IShowToastOptions {
     /**
      * 提示的内容

@@ -1,7 +1,7 @@
 /**
  * @file 位置
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ILocation {
     /**
      * 纬度，浮点数，范围为-90~90，负数表示南纬

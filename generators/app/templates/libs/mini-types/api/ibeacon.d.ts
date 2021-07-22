@@ -1,7 +1,7 @@
 /**
  * @file iBeacon
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IStartBeaconDiscoveryOptions {
     /**
      * 目标 iBeacon 设备广播的 uuids

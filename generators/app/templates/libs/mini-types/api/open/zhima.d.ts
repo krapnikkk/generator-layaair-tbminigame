@@ -1,7 +1,7 @@
 /**
  * @file 芝麻认证
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IStartZMVerifySuccessResult {
     /**
      * 认证标识

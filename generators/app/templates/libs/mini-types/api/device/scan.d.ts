@@ -1,7 +1,7 @@
 /**
  * @file 扫码
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   /**
    * 扫码识别类型，默认值为 ['qrCode','barCode']
    * 二维码 | 条码 | DM码 | PDF417码 | 窄条二维码 | 异构码

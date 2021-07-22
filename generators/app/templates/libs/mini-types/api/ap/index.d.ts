@@ -1,7 +1,7 @@
 /**
  * @file 升级支付宝最新版本
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
     interface IUpdateAlipayClientSuccessResult {
         readonly success: boolean;
     }

@@ -1,7 +1,7 @@
 /**
  * @file canIUse
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   export interface my {
     /**
      * 判断当前小程序的 API、入参或返回值、组件、属性等在当前版本是否支持。

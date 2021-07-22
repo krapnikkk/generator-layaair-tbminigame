@@ -1,7 +1,7 @@
 /**
  * @file 文件
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ISaveFileSuccessResult {
     /**
      * 文件的保存路径

@@ -1,7 +1,7 @@
 /**
  * @file 支付宝卡包
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOpenMerchantCardListOptions {
     /**
      * 商户编号

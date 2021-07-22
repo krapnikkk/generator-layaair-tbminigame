@@ -1,7 +1,7 @@
 /**
  * @file 选择日期
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IDatePickerFailResult {
     /**
      * - 11：用户取消操作

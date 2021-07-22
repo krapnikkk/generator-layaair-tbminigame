@@ -1,7 +1,7 @@
 /**
  * @file 罗盘
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOnCompassChangeEvent {
     /**
      * 面对的方向与正北方向的度数[0,360)

@@ -1,7 +1,7 @@
 /**
  * @file 小程序唤起支付
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ITradePaySuccessResult {
     /**
      * - 9000：订单支付成功

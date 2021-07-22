@@ -14,8 +14,9 @@
 /// <reference path="./scene.d.ts" />
 /// <reference path="./analytics.d.ts" />
 /// <reference path="./ap/index.d.ts" />
+/// <reference path="./base/index.d.ts" />
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   /**
    * 节点查询 https://docs.alipay.com/mini/api/selector-query
    */

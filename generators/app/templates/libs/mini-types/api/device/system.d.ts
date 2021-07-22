@@ -1,7 +1,7 @@
 /**
  * @file 系统信息
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetSystemInfoSuccessResult {
     /**
      * 用户设置字体大小

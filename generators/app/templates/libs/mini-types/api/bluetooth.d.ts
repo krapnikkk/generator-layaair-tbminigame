@@ -1,7 +1,7 @@
 /**
  * @file 蓝牙
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOpenBluetoothAdapterSuccessResult {
     /**
      * 是否支持 BLE

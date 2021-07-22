@@ -1,7 +1,7 @@
 /**
  * @file 节点查询
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ISelectorQuerySelectMethod {
     /**
      * 选择当前第一个匹配选择器的节点，选择器支持 id 选择器以及 class 选择器.

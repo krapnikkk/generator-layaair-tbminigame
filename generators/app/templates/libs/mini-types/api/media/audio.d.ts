@@ -1,7 +1,7 @@
 /**
  * @file 内部音频控制
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IInnerAudioContext {
     /**
      * 音频码，用于直接播放。支持音频格式：AAC，MP3。如果开发者不传入音频码，控制台不会报错，但无音频播放。

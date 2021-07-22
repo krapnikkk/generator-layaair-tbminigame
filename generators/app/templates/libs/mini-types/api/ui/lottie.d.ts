@@ -1,7 +1,7 @@
 /**
  * @file Lottie动画
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ILottieContext {
     /**
      * Lottie组件的id

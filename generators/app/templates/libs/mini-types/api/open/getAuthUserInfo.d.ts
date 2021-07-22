@@ -1,7 +1,7 @@
 /**
  * @file 客户端获取会员信息
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetAuthUserInfoSuccessResult {
     /**
      * 用户昵称

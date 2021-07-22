@@ -8,7 +8,7 @@
  *  - iOS支持iTunes备份。
  */
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ISetStorageOptions {
     /**
      * 缓存数据的key

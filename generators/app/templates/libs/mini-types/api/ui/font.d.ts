@@ -1,4 +1,4 @@
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ILoadFontFaceOptions {
     /**
      * 字体名称

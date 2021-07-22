@@ -3,7 +3,7 @@
 /**
  * @file 多媒体
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IChooseImageSuccessResult {
     /**
      * 本地文件路径列表

@@ -1,7 +1,7 @@
 /**
  * @file 地图
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetCenterLocationResult {
     readonly longitude: number
     readonly latitude: number

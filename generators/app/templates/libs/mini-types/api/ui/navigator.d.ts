@@ -1,4 +1,4 @@
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface INavigateBaseCallbackOptions {
     /**
      * 调用成功的回调函数

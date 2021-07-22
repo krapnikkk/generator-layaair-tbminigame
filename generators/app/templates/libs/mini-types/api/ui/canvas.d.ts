@@ -1,7 +1,7 @@
 /**
  * @file 画布
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ILinearGradient {
     /**
      * 创建一个颜色的渐变点。

@@ -1,7 +1,7 @@
 /**
  * @file 同步获取小程序启动参数
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IReferrerInfo {
     /**
      * 来源小程序。

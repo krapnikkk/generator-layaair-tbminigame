@@ -2,7 +2,7 @@
  * @file 自定义分析
  */
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   export interface my {
     /**
      * 自定义分析数据的上报接口。使用前需要在小程序管理后台的事件管理中新建事件，并配置好事件名和字段。

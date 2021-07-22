@@ -1,7 +1,7 @@
 /**
  * @file 级联选择
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type MultiLevelSelectOptionsList = Array<{
     name: string
     subList?: MultiLevelSelectOptionsList

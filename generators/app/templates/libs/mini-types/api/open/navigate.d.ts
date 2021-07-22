@@ -1,7 +1,7 @@
 /**
  * @file 小程序跳转
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface INavigateToMiniProgram {
     /**
      * 要跳转的目标小程序appId

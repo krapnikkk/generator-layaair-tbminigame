@@ -1,7 +1,7 @@
 /**
  * @file webview 组件控制
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IWebViewContext {
     /**
      * 小程序向web-view组件发送消息，配合web-view.js中提供的my.postMessage可以实现小程序和web-view网页的双向通信

@@ -1,7 +1,7 @@
 /**
  * @file 获取服务器时间
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IGetServerTimeSuccessResult {
     /**
      * 服务器时间的毫秒数

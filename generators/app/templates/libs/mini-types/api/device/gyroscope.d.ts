@@ -1,7 +1,7 @@
 /**
  * @file 陀螺仪
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IOnGyroscopeChangeEvent {
     /**
      * x轴方向角速度

@@ -2,7 +2,7 @@
  * @file 设置页面是否支持下拉
  */
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ICanPullDownOptions {
     canPullDown: boolean
   }

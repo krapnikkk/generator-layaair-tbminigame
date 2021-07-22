@@ -1,5 +1,5 @@
 declare namespace tinyapp {
-    import IOnUnhandledRejectionCallbackOptions = AliMiniProgram.IOnUnhandledRejectionCallbackOptions
+    import IOnUnhandledRejectionCallbackOptions = TBMiniProgram.IOnUnhandledRejectionCallbackOptions
     type Query = Record<string, string | number>
 
     interface IAppLaunchOptions {

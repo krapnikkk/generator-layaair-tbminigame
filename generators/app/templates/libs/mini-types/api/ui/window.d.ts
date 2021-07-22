@@ -2,7 +2,7 @@
  * @file 窗口背景
  */
 
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface ISetBackgroundColorOptions {
     /**
      * 窗口的背景色

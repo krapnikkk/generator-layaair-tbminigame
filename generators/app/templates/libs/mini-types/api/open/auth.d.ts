@@ -1,7 +1,7 @@
 /**
  * @file 用户授权
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   type GetAuthCodeOptionsScope = 'auth_base' | 'auth_user' | 'auth_zhima'
 
   interface IGetAuthCodeSuccessResult {

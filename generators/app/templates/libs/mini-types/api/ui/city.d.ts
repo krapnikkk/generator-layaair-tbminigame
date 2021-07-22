@@ -1,7 +1,7 @@
 /**
  * @file 选择城市
  */
-declare namespace AliMiniProgram {
+declare namespace TBMiniProgram {
   interface IChooseCitySuccessResult {
     /**
      * 城市名
