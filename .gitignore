@@ -1,3 +1,8 @@
 node_modules
 coverage
 generators/app/templates/release/
+generators/app/templates/.laya/_pub_old
+generators/app/templates/.laya/chrome
+generators/app/templates/.rpt2_cache
+
+
