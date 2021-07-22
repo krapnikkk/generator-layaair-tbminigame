@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1492" overflow="scroll" scrollBarFlags="144" scrollBar="hidden" designImage="ui://aksov0e9m5i815">
+  <displayList>
+    <image id="n6_z7yt" name="bg" src="m5i81" fileName="images/background.png" xy="0,0"/>
+    <loader id="n10_z7yt" name="loader_tips" xy="108,229" size="528,42" url="ui://aksov0e9m5i82" align="center" vAlign="middle" fill="scale" autoSize="true"/>
+    <component id="n12_z7yt" name="panel_date_activity" src="m5i83" fileName="components/panel_date_activity.xml" xy="140,278"/>
+    <component id="n1_z7yt" name="panel_ranking" src="m5i8a" fileName="components/panel_ranking.xml" xy="25,611">
+      <relation target="" sidePair="center-center"/>
+    </component>
+    <component id="n4_z7yt" name="btn_invite" src="m5i8u" fileName="components/btn_invite.xml" xy="374,1340">
+      <relation target="" sidePair="center-center"/>
+    </component>
+    <text id="n5_z7yt" name="txt_tips_invite_count" xy="236,1387" size="266,26" fontSize="18" color="#ffd3b0" align="center" vAlign="middle" vars="true" text="注：成功邀请{invite=3}人有资格参与冲榜">
+      <relation target="" sidePair="center-center"/>
+    </text>
+    <component id="n13_m5i8" name="btn_rule" src="m5i813" fileName="components/btn_rule.xml" xy="635,238">
+      <relation target="" sidePair="center-center"/>
+    </component>
+    <image id="n17_feow" name="bg_polyfill" src="m5i8x" fileName="widget/bg_pink.png" xy="0,1492" size="750,80">
+      <relation target="n18_feow" sidePair="height-height"/>
+      <relation target="" sidePair="center-center"/>
+    </image>
+    <list id="n18_feow" name="list_recommendation" xy="32,1537" size="686,0" layout="flow_hz" lineGap="30" colGap="30" defaultItem="ui://aksov0e9m5i8y" autoItemSize="true" autoClearItems="true">
+      <relation target="" sidePair="center-center"/>
+    </list>
+    <loader id="n19_feow" name="btn_jackpot" xy="621,1172" size="103,114" group="n21_feow" url="ui://aksov0e9feow17">
+      <relation target="" sidePair="center-center,bottomext-bottom%"/>
+    </loader>
+    <loader id="n20_feow" name="btn_prize" xy="626,1291" size="103,114" group="n21_feow" url="ui://aksov0e9feow18">
+      <relation target="" sidePair="center-center,bottomext-bottom%"/>
+    </loader>
+    <group id="n21_feow" name="group_float" xy="621,1172" size="108,233" advanced="true">
+      <relation target="" sidePair="center-center,bottom-bottom%"/>
+    </group>
+  </displayList>
+</component>

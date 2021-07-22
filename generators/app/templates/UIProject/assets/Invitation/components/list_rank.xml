@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="729,627" bgColorEnabled="true">
+  <controller name="status" pages="2,empty,1,non-empty" selected="0"/>
+  <displayList>
+    <text id="n7_m5i8" name="txt_default" xy="290,289" size="148,49" font="SimHei" fontSize="36" color="#717171" text="暂无排行">
+      <gearDisplay controller="status" pages="2"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+    <list id="n5_z7yt" name="list_rank" xy="14,0" size="700,595" overflow="scroll" defaultItem="ui://aksov0e9m5i8f" autoClearItems="true">
+      <gearDisplay controller="status" pages="1"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n6_z7yt" name="item" src="m5i8p" fileName="components/item_record.xml" xy="0,501">
+      <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </component>
+  </displayList>
+</component>

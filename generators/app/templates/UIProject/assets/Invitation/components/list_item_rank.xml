@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="700,114">
+  <displayList>
+    <text id="n0_z7yt" name="txt_number" xy="47,24" size="40,67" font="ui://aksov0e9m5i8g" fontSize="28" color="#85584d" align="center" vAlign="middle" autoSize="none" bold="true" text="1">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+    <graph id="n11_feow" name="bg_avatar" xy="94,23" size="68,68" type="eclipse" lineSize="0">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </graph>
+    <component id="n1_z7yt" name="loader_avatar" src="m5i8k" fileName="components/loader_avatar.xml" xy="95,24">
+      <relation target="n11_feow" sidePair="center-center,middle-middle"/>
+    </component>
+    <text id="n2_z7yt" name="txt_nickname" xy="184,22" size="144,39" font="SimHei" fontSize="28" color="#85584d" text="数据加载中"/>
+    <text id="n3_z7yt" name="txt_invitation" xy="183,65" size="244,34" font="SimHei" fontSize="24" color="#85584d" ubb="true" vars="true" text="成功邀请[color=#FF3200]{count=0}[/color]人  积分：[color=#FF3200]{points=0}[/color]"/>
+    <component id="n6_z7yt" name="loader_award" src="m5i8m" fileName="components/loader_award.xml" xy="554,7" size="100,100"/>
+    <image id="n10_z7yt" name="line" src="m5i8o" fileName="widget/line.png" xy="23,113"/>
+  </displayList>
+</component>

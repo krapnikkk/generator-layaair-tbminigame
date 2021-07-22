@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="700,284">
+  <controller name="count" pages="0,1,1,2,2,3" selected="2"/>
+  <displayList>
+    <image id="n1_z7yt" name="bg" src="m5i86" fileName="widget/round_rectangle_white.png" xy="0,2" size="700,280">
+      <relation target="n0_z7yt" sidePair="width-width,height-height"/>
+    </image>
+    <list id="n0_z7yt" name="list_award" xy="5,4" size="690,280" layout="row" overflow="scroll" scroll="horizontal" scrollBarFlags="162" scrollBar="hidden" defaultItem="ui://aksov0e9m5i87" align="center" vAlign="middle" scrollItemToViewOnClick="false">
+      <gearSize controller="count" pages="0,1,2" values="230,280,1,1|460,280,1,1|690,280,1,1"/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+  <relation target="n1_z7yt" sidePair="width-width"/>
+</component>

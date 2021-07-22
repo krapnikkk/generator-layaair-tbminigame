@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="677,116" bgColorEnabled="true">
+  <displayList>
+    <graph id="n11_feow" name="bg_avatar" xy="99,19" size="68,68" type="eclipse" lineSize="0">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </graph>
+    <component id="n1_z7yt" name="loader_avatar" src="m5i8k" fileName="components/loader_avatar.xml" xy="99,19" size="68,68">
+      <relation target="n11_feow" sidePair="center-center,middle-middle"/>
+    </component>
+    <text id="n2_z7yt" name="txt_nickname" xy="189,19" size="144,39" font="SimHei" fontSize="28" color="#85584d" bold="true" text="数据加载中"/>
+    <text id="n3_z7yt" name="txt_date" xy="188,61" size="352,34" font="SimHei" fontSize="24" color="#898888" vars="true" bold="true" text="入会时间：{data=1999.01.01 00:00:00}"/>
+    <image id="n10_z7yt" name="line" src="m5i8o" fileName="widget/line.png" xy="23,115"/>
+  </displayList>
+</component>

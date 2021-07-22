@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="729,126">
+  <controller name="ranking" pages="1,false,0,true" selected="0"/>
+  <controller name="prize" pages="0,hide,1,show" selected="0"/>
+  <displayList>
+    <image id="n6_z7yt" name="bg" src="m5i8q" fileName="images/图层 2.png" xy="0,0"/>
+    <text id="n7_z7yt" name="txt_number" xy="37,43" size="76,34" font="SimHei" fontSize="24" color="#890b04" text="未上榜">
+      <gearDisplay controller="ranking" pages="1"/>
+    </text>
+    <graph id="n15_feow" name="bg_avatar" xy="147,17" size="68,68" type="eclipse" lineSize="0">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </graph>
+    <component id="n8_z7yt" name="loader_avatar" src="m5i8k" fileName="components/loader_avatar.xml" xy="148,18"/>
+    <text id="n9_z7yt" name="txt_nickname" xy="235,14" size="34,42" fontSize="30" color="#ffffff" text="我"/>
+    <text id="n10_z7yt" name="txt_invitation" xy="235,54" size="234,34" fontSize="24" color="#ffffff" vars="true" text="成功邀请{count=0}人  积分：{points=0}"/>
+    <component id="n12_m5i8" name="loader_award" src="m5i8m" fileName="components/loader_award.xml" xy="568,7" size="100,100">
+      <gearDisplay controller="prize" pages="1"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </component>
+    <image id="n13_m5i8" name="txt_rank_bg" src="m5i8r" fileName="widget/capsules_brower.png" xy="26,35" size="82,43">
+      <gearDisplay controller="ranking" pages="0"/>
+      <relation target="" sidePair="center-center,middle-middle%"/>
+    </image>
+    <text id="n14_m5i8" name="txt_rank" xy="58,40" size="16,34" font="SimHei" fontSize="24" color="#c57e44" align="center" vars="true" text="{rank=1}">
+      <gearDisplay controller="ranking" pages="0"/>
+      <relation target="" sidePair="center-center,middle-middle%"/>
+    </text>
+  </displayList>
+</component>

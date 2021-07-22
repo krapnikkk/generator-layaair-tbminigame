@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,446">
+  <displayList>
+    <image id="n0_z7yt" name="bg" src="m5i8x" fileName="widget/bg_pink.png" xy="0,0" size="750,446">
+      <relation target="n3_z7yt" sidePair="height-height"/>
+    </image>
+    <list id="n3_z7yt" name="list_recommendation" xy="32,36" size="686,400" layout="flow_hz" lineGap="30" colGap="30" defaultItem="ui://aksov0e9m5i8y" autoItemSize="true" autoClearItems="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </list>
+  </displayList>
+  <relation target="n0_z7yt" sidePair="height-height"/>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="280,280" extention="Label" mask="n0_z7yt">
+  <displayList>
+    <image id="n0_z7yt" name="mask" src="m5i86" fileName="widget/round_rectangle_white.png" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n2_z7yt" name="icon" xy="0,0" size="280,280" url="ui://aksov0e9m5i88" align="center" vAlign="middle" fill="scale">
+      <relation target="" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </loader>
+  </displayList>
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="149,41" extention="Button">
+  <controller name="status" pages="0,on,1,off" selected="0"/>
+  <displayList>
+    <image id="n0_z7yt" name="n0" src="m5i811" fileName="images/btn_common_taobao.png" xy="0,0">
+      <gearDisplay controller="status" pages="0,2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_z7yt" name="n1" src="m5i812" fileName="images/btn_common_gray.png" xy="0,0">
+      <gearDisplay controller="status" pages="1,3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n2_z7yt" name="title" xy="0,0" size="149,41" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="查看商品">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="700,676">
+  <controller name="tab" pages="0,rank,1,invite" selected="0"/>
+  <displayList>
+    <image id="n2_z7yt" name="bg" src="m5i8b" fileName="widget/bg_white.png" xy="0,67" size="700,609"/>
+    <component id="n0_z7yt" name="btn_tab_rank" src="m5i8c" fileName="components/btn_tab_base.xml" xy="350,67" pivot="1,1" anchor="true" size="350,67">
+      <gearSize controller="tab" pages="0,1" values="350,67,1,1|350,52,1,1" tween="true"/>
+      <Button checked="true" title="排行榜" controller="tab" page="0"/>
+    </component>
+    <component id="n3_z7yt" name="btn_tab_invitation" src="m5i8c" fileName="components/btn_tab_base.xml" xy="350,67" pivot="0,1" anchor="true" size="350,52">
+      <gearSize controller="tab" pages="0,1" values="350,52,1,1|350,67,1,1" tween="true"/>
+      <Button title="我邀请的好友" controller="tab" page="1"/>
+    </component>
+    <component id="n5_z7yt" name="list_rank" src="m5i8e" fileName="components/list_rank.xml" xy="-14,80">
+      <gearDisplay controller="tab" pages="0"/>
+    </component>
+    <component id="n9_z7yt" name="list_invitation" src="m5i8s" fileName="components/list_invitation.xml" xy="0,80">
+      <gearDisplay controller="tab" pages="1"/>
+    </component>
+  </displayList>
+</component>

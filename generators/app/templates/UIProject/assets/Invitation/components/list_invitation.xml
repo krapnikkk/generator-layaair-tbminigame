@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="700,627" bgColorEnabled="true">
+  <controller name="status" pages="1,empty,0,non-empty" selected="1"/>
+  <displayList>
+    <richtext id="n0_z7yt" name="txt_invitation" xy="67,11" size="556,64" font="SimHei" fontSize="30" color="#512014" vAlign="bottom" ubb="true" vars="true" text="已有[color=#00A2FF][size=48]{count=8}[/size][/color]位好友成功入会，获得奖励：[color=#FF0000][size=48]{points=64}[/size][/color]分">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </richtext>
+    <list id="n1_z7yt" name="list_invitation" xy="0,84" size="700,505" overflow="scroll" defaultItem="ui://aksov0e9m5i8t" autoClearItems="true">
+      <gearDisplay controller="status" pages="0"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n2_m5i8" name="txt_tips_title" xy="182,183" size="346,113" group="n4_m5i8" font="SimHei" fontSize="36" color="#ffa02a" align="center" leading="20" text="目前还没有好友入会 &#xA;快去邀请TA吧"/>
+    <text id="n3_m5i8" name="txt_tips_desc" xy="84,401" size="532,83" group="n4_m5i8" font="SimHei" fontSize="24" color="#717171" align="center" leading="20" text="通过邀请入会的好友越多，越有机会免费得奖品&#xD;&#xA;（好友加入会员之后，同样可以参与冲榜赢大礼）"/>
+    <group id="n4_m5i8" name="txt_tips" xy="84,183" size="532,301" advanced="true">
+      <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

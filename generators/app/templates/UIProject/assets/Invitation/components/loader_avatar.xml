@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="66,66" extention="Label" mask="n1_z7yt">
+  <displayList>
+    <graph id="n1_z7yt" name="mask" xy="0,0" size="66,66" aspect="true" type="eclipse" lineSize="0"/>
+    <loader id="n0_z7yt" name="icon" xy="0,0" size="66,66" url="ui://aksov0e9m5i8l" align="center" vAlign="middle" fill="scale"/>
+  </displayList>
+</component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="350,67" extention="Button">
+  <controller name="button" pages="1,up,0,down" selected="1"/>
+  <displayList>
+    <graph id="n0_b9he" name="n0" xy="0,0" size="350,67" touchable="false" type="rect" lineSize="0" fillColor="#ffffc240" corner="12,12,0,0">
+      <gearDisplay controller="button" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_b9he" name="n1" xy="0,0" size="350,67" touchable="false" type="rect" lineSize="0" fillColor="#ffff9540" corner="12,12,0,0">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n3_z7yt" name="title" xy="0,1" size="350,52" font="SimHei" fontSize="34" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" text="标题">
+      <relation target="" sidePair="center-center,top-top"/>
+    </text>
+    <image id="n4_z7yt" name="triangle" src="m5i8d" fileName="widget/triangle.png" xy="156,52">
+      <gearDisplay controller="button" pages="0"/>
+      <relation target="" sidePair="center-center"/>
+    </image>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

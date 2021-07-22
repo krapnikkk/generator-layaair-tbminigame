@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="aksov0e9">
+  <resources>
+    <component id="m5i80" name="Main.xml" path="/" exported="true"/>
+    <image id="m5i81" name="background.png" path="/images/"/>
+    <image id="m5i82" name="邀请好友入会，助力冲榜得大奖_.png" path="/images/"/>
+    <component id="m5i83" name="panel_date_activity.xml" path="/components/"/>
+    <image id="m5i84" name="round_rectangle_red.png" path="/widget/" scale="9grid" scale9grid="10,10,20,20"/>
+    <component id="m5i85" name="panel_award.xml" path="/components/"/>
+    <image id="m5i86" name="round_rectangle_white.png" path="/widget/" scale="9grid" scale9grid="70,70,140,140"/>
+    <component id="m5i87" name="list_item_award.xml" path="/components/"/>
+    <image id="m5i88" name="award.png" path="/images/"/>
+    <image id="m5i89" name="capsules_red.png" path="/widget/" scale="9grid" scale9grid="20,6,40,12"/>
+    <component id="m5i8a" name="panel_ranking.xml" path="/components/"/>
+    <image id="m5i8b" name="bg_white.png" path="/widget/" scale="9grid" scale9grid="25,25,50,50"/>
+    <component id="m5i8c" name="btn_tab_base.xml" path="/components/"/>
+    <image id="m5i8d" name="triangle.png" path="/widget/"/>
+    <component id="m5i8e" name="list_rank.xml" path="/components/"/>
+    <component id="m5i8f" name="list_item_rank.xml" path="/components/"/>
+    <font id="m5i8g" name="rank.fnt" path="/images/" exported="true"/>
+    <image id="m5i8h" name="千库网_金色质感数字1_艺术字编号2418033.png" path="/images/"/>
+    <image id="m5i8i" name="千库网_金色质感数字2_艺术字编号2418034.png" path="/images/"/>
+    <component id="m5i8k" name="loader_avatar.xml" path="/components/"/>
+    <image id="m5i8l" name="avatar.png" path="/images/"/>
+    <component id="m5i8m" name="loader_award.xml" path="/components/"/>
+    <image id="m5i8n" name="frame_award.png" path="/widget/"/>
+    <image id="m5i8o" name="line.png" path="/widget/" scale="9grid" scale9grid="163,0,326,0"/>
+    <component id="m5i8p" name="item_record.xml" path="/components/"/>
+    <image id="m5i8q" name="图层 2.png" path="/images/"/>
+    <image id="m5i8r" name="capsules_brower.png" path="/widget/" scale="9grid" scale9grid="20,10,40,20"/>
+    <component id="m5i8s" name="list_invitation.xml" path="/components/"/>
+    <component id="m5i8t" name="list_item_invitation.xml" path="/components/"/>
+    <component id="m5i8u" name="btn_invite.xml" path="/components/"/>
+    <image id="m5i8v" name="btn_invite.png" path="/images/"/>
+    <component id="m5i8w" name="panel_recommendation.xml" path="/components/"/>
+    <image id="m5i8x" name="bg_pink.png" path="/widget/" scale="9grid" scale9grid="12,12,24,24"/>
+    <component id="m5i8y" name="list_item_recommendation.xml" path="/components/" exported="true"/>
+    <component id="m5i8z" name="loader_goods.xml" path="/components/"/>
+    <component id="m5i810" name="btn_common_base.xml" path="/components/"/>
+    <image id="m5i811" name="btn_common_taobao.png" path="/images/"/>
+    <image id="m5i812" name="btn_common_gray.png" path="/images/"/>
+    <component id="m5i813" name="btn_rule.xml" path="/components/"/>
+    <image id="m5i814" name="btn_rule.png" path="/images/"/>
+    <image id="m5i815" name="入会打榜.png" path="/images/"/>
+    <image id="feow17" name="图层 58.png" path="/images/"/>
+    <image id="feow18" name="奖品包.png" path="/images/"/>
+    <component id="feow19" name="btn_icon.xml" path="/components/"/>
+  </resources>
+  <publish name="" genCode="true" codePath="..\src\module"/>
+</packageDescription>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="190,87" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n0_m5i8" name="n0" src="m5i814" fileName="images/btn_rule.png" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n1_m5i8" name="title" xy="0,0" size="153,87" font="SimHei" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="规则">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="108,109" extention="Label">
+  <displayList>
+    <image id="n6_z7yt" name="frame" src="m5i8n" fileName="widget/frame_award.png" xy="0,0">
+      <relation target="" sidePair="width-width%,height-height,center-center,middle-middle"/>
+    </image>
+    <loader id="n5_z7yt" name="loader_award" xy="4,5" size="100,100" url="ui://aksov0e9m5i88" fill="scale">
+      <relation target="n6_z7yt" sidePair="width-width,height-height"/>
+    </loader>
+  </displayList>
+</component>
