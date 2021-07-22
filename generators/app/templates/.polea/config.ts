@@ -3,10 +3,11 @@ import { getversion } from "./getVersion";
 let config: polea.ConfigManager = {
     buildConfig: (params: polea.ConfigCommand) => {
         let { command } = params;
+        console.log(params);
         if (command == "compile") {//polea compile
             return {
                 define: { DEBUG: true, RELEASE: false },
-                watch: false,
+                watch: true,
                 output: "./bin",
                 plugins: [new polea.ESBundlePlugin({ sourcemap: true })],
             };

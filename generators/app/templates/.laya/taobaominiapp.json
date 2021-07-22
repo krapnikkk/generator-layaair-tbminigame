@@ -59,13 +59,13 @@
         ""
     ],
     "clearReleaseDir": true,
-    "compile": false,
+    "compile": true,
     "forceCompile": false,
     "onlyIndexJS": true,
     "useMinJsLibs": true,
     "es6toes5": true,
     "projectType": "ts",
-    "pubTime": 1626767834944,
+    "pubTime": 1626860736634,
     "taobaoInfo": {
         "orientation": "portrait"
     }
