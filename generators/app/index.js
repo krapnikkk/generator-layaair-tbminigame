@@ -6,26 +6,6 @@ const fs = require('fs');
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
-    // this.log(
-    //   yosay(
-    //     `Welcome to the laudable ${chalk.red('generator-layaair-tbminigame')} generator!`
-    //   )
-    // );
-
-    // const prompts = [
-    //   {
-    //     type: 'confirm',
-    //     name: 'someAnswer',
-    //     message: 'Would you like to enable this option?',
-    //     default: true
-    //   }
-    // ];
-
-    // return this.prompt(prompts).then(props => {
-    //   // To access props later use this.props.someAnswer;
-    //   this.props = props;
-    // });
     this.log(
       yosay(`欢迎使用\n${chalk.green('generator-layaair-tbminigame')}`)
     );
@@ -56,6 +36,7 @@ module.exports = class extends Generator {
     //   this.templatePath('.gitignore'),
     //   this.destinationPath(`${this.props.appName}/.gitignore`)
     // );
+    this.log("正在复制模板文件......");
     this.fs.copy(
       this.templatePath(`example.laya`),
       this.destinationPath(`${this.props.appName}/example.laya`)
@@ -79,7 +60,8 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath("libs"), this.destinationPath(`${this.props.appName}/libs`));
     this.fs.copy(this.templatePath("src"), this.destinationPath(`${this.props.appName}/src`));
     this.fs.copy(this.templatePath("tools"), this.destinationPath(`${this.props.appName}/tools`));
-
+    this.fs.copy(this.templatePath("UIProject"), this.destinationPath(`${this.props.appName}/UIProject`));
+    this.log("复制模板文件完成！");
     }
 
   generateClient() {
@@ -89,10 +71,12 @@ module.exports = class extends Generator {
   }
 
   install() {
+    this.log("正在重命名模板文件......");
+    fs.renameSync(this.destinationPath(`${this.props.appName}/UIProject/example.fairy`), this.destinationPath(`${this.props.appName}/${this.props.appName}.fairy`));
     fs.renameSync(this.destinationPath(`${this.props.appName}/example.laya`), this.destinationPath(`${this.props.appName}/${this.props.appName}.laya`));
     fs.renameSync(this.destinationPath(`${this.props.appName}/gitignore`), this.destinationPath(`${this.props.appName}/.gitignore`));
     fs.writeFileSync(this.destinationPath(`${this.props.appName}/${this.props.appName}.laya`),`{"proName":"${this.props.appName}","engineType":0,"proType":1,"layaProType":1,"version":"2.1.0"}`)
-  
+    this.log("重命名模板文件完成！");
     // this.installDependencies();
   }
 };
