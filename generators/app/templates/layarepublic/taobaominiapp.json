@@ -62,7 +62,7 @@
     "compile": true,
     "forceCompile": false,
     "onlyIndexJS": true,
-    "useMinJsLibs": false,
+    "useMinJsLibs": true,
     "es6toes5": true,
     "projectType": "ts",
     "pubTime": 1627282585286,
