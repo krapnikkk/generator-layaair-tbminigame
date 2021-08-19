@@ -1,0 +1,18 @@
+{
+    "pages": [
+        "pages/index/game"
+    ],
+    "plugins": {
+        "cemMember": {
+            "version": "*",
+            "provider": "3000000026642582"
+        }
+    },
+    "window": {
+        "defaultTitle": "小爱营销工具合集",
+        "allowsBounceVertical": "NO",
+        "titleBarColor": "#ffffff",
+        "transparentTitle": "always",
+        "enableSkia": true
+    }
+}

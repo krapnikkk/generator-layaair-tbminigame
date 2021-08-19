@@ -1,0 +1,14 @@
+{
+  "name": "layaengine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "files":[
+    "libs/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LayaAir Team",
+  "license": "ISC"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "layatest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "bundledDependencies":[
+  ],
+  "scripts": {
+    "build-canal": "canal -i ./ -o ./__canal_dist__ -m canal -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LayaAir Team",
+  "license": "ISC"
+}

@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/game"
+  ],
+  "window": {
+    "defaultTitle": "My App",
+    "allowsBounceVertical":"NO",
+    "enableSkia":true
+  }
+}

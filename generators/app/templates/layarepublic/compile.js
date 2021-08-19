@@ -4,21 +4,22 @@ const useIDENode = process.argv[0].indexOf("LayaAir") > -1 ? true : false;
 const useCMDNode = process.argv[1].indexOf("layaair2-cmd") > -1 ? true : false;
 
 function useOtherNode(){
-	return useIDENode||useCMDNode;
+	return true;
 }
 //获取Node插件和工作路径
 let ideModuleDir = useOtherNode() ? process.argv[1].replace("gulp\\bin\\gulp.js", "").replace("gulp/bin/gulp.js", "") : "";
 let workSpaceDir = useOtherNode() ? process.argv[2].replace("--gulpfile=", "").replace("\\.laya\\compile.js", "").replace("/.laya/compile.js", "") : "./../";
 
-const gulp = require(ideModuleDir + "gulp");
-const rollup = require(ideModuleDir + "rollup");
-const typescript = require(ideModuleDir + 'rollup-plugin-typescript2');//typescript2 plugin
-const glsl = require(ideModuleDir + 'rollup-plugin-glsl');
+const gulp = require("gulp");
+const rollup = require("rollup");
+const typescript = require('rollup-plugin-typescript2');//typescript2 plugin
+const glsl = require('rollup-plugin-glsl');
 const path = require('path');
 const fs = require('fs');
 
 // 如果是发布时调用编译功能，增加prevTasks
 let prevTasks = "";
+
 if (global.publish) {
 	prevTasks = ["loadConfig"];
 }

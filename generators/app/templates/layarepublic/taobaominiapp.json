@@ -62,10 +62,10 @@
     "compile": true,
     "forceCompile": false,
     "onlyIndexJS": true,
-    "useMinJsLibs": true,
+    "useMinJsLibs": false,
     "es6toes5": true,
     "projectType": "ts",
-    "pubTime": 1627012100329,
+    "pubTime": 1627282585286,
     "taobaoInfo": {
         "orientation": "portrait"
     }

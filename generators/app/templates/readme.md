@@ -81,8 +81,15 @@ export default class Demo extends UI_Main{
 npm install 
 ```
 
-运行发布
+compile
 ```
-node build/gulp/bin/gulp.js --gulpfile=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/build/publish.js --config=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/.laya/taobaominiapp.json publish
+node layarepublic/gulp/bin/gulp.js --gulpfile=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/layarepublic/compile.js --config=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/.laya/taobaominiapp.json publish
 ```
+
+publish
+```
+node layarepublic/gulp/bin/gulp.js --gulpfile=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/layarepublic/publish.js --config=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/.laya/taobaominiapp.json publish
+```
+
+
 

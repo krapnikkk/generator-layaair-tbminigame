@@ -1,0 +1,7 @@
+<view class="canvas-element" style="flex-direction:row;display:flex;flex:1;">
+  <canvas id="canvas" 
+  type="webgl" 
+  onReady="canvasOnReady" 
+  style="width:750rpx;height:600rpx;" 
+  onTouchStart="onTouchStart" onTouchCancel="onTouchCancel" onTouchEnd="onTouchEnd" onTouchMove="onTouchMove"></canvas>
+</view>

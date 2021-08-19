@@ -65,8 +65,11 @@
     "useMinJsLibs": true,
     "es6toes5": true,
     "projectType": "ts",
-    "pubTime": 1627282585286,
+    "pubTime": 1629343614973,
     "taobaoInfo": {
-        "orientation": "portrait"
-    }
+        "orientation": "portrait",
+        "subpack": false,
+        "ispagesub": false
+    },
+    "taobaoSubpack": []
 }

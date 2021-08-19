@@ -3,7 +3,8 @@ const path = require('path')//路径
 const child_process = require('child_process')//命令行用
 const readline = require('readline');//按行文件用
 const os = require("os");
-
+let args = process.argv.slice(2);
+let env = args.length > 0 ? args[0] : "development";
 function public() {
 
     // 校验是否以及存在发布项目
@@ -15,23 +16,45 @@ function public() {
     //复制tbmini文件夹到发布后的淘宝文件
     console.log(`开始复制文件！`);
     copy('./libs', '../release/taobaominiapp/node_modules/layaengine/libs/min');
+    copy('./game', '../release/taobaominiapp/pages/index'); // game场景axml和js
+
+    // 如果需要插件的话
+    copy('./plugin/', '../release/taobaominiapp/'); // 插件配置文件
+    // copy('./plugin/', '../release/taobaominiapp/');  // 入口文件将数据绑定至global
     console.log(`复制文件完成！`);
 
-    //todo 项目资源自动上传到cdn
 
-    //删除UI和sound文件
-    // let deletePath = [
-    // 	'/res/UI',
-    // 	'/sound',
-    // ]
-    // for (var i = 0; i < deletePath.length; i++) {
-    // 	deleteFolderRecursive("./release/taobaominiapp/pages/index" + deletePath[i])
-    // }
+
+    // todo 按需增加dom解析库
+    // pages\index\js
+    // var window = $global.window;
+    // delete require.cache[require.resolve("./js/dom_parser.js")];
+    // window.Parser = require("./js/dom_parser.js");
+
+
+    //todo 删除项目资源并自动上传到cdn
+    console.log(`开始删除本地资源！`);
+    let deletePath = [
+        '/res/fgui',
+    ]
+    for (var i = 0; i < deletePath.length; i++) {
+        deleteFolderRecursive("../release/taobaominiapp/pages/index" + deletePath[i])
+    }
+    console.log(`删除本地资源完成！`);
 
     //修改bundle.js，加入fariygui文件
     console.log(`开始修改文件！`);
-    modifyFile("../release/taobaominiapp/pages/index/js/bundle.js", ['var fairygui = window.fairygui;', 'var fgui = window.fgui;'])
+    modifyFile("../release/taobaominiapp/pages/index/js/bundle.js", ['var fairygui = window.fairygui;', 'var fgui = window.fgui;', 'var platform = window.platform;'])
+    let content = fs.readFileSync("../release/taobaominiapp/pages/index/js/bundle.js", { encoding: "utf-8" });
+    content = content.replace(`__require("@tbmp/mp-cloud-sdk")`, `require("@tbmp/mp-cloud-sdk")`);
+    // 根据环境字符$ENV更改云函数的启动参数
+    let envArg = env == "production" ? '"online"' : '"test"';
+    content = content.replace("$ENV", envArg);
+    fs.writeFileSync("../release/taobaominiapp/pages/index/js/bundle.js", content);
     console.log(`修改文件完成！`);
+
+    //引入sdk
+
 
     //导入依赖文件
     if (!checkRelease('../release/taobaominiapp/node_modules/@tbmp')) {// 无需重复install
@@ -113,11 +136,11 @@ function deleteFolderRecursive(from) {
 };
 
 //修改文件
-function modifyFile(filePath, contents) {
+function modifyFile(filePath, contents, line = 5) {
     filePath = path.resolve(filePath)
     readFileToArr(filePath, (arr) => {
         for (var i = 0; i < contents.length; i++) {
-            arr.splice(5, 0, contents[i]);//写死从第五行开始
+            arr.splice(line, 0, contents[i]);//写死从第五行开始
         }
         fs.writeFileSync(filePath, arr[0] + os.EOL);
         for (var i = 1; i < arr.length; i++) {
@@ -164,5 +187,6 @@ function installDependence() {
     var cmdStr = 'cd ../release/taobaominiapp && npm i -S @tbmp/mp-cloud-sdk';
     exec(cmdStr);
 }
+
 
 public();
