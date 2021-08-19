@@ -1,0 +1,43 @@
+{
+  "_from": "@tbmp/mp-cloud-sdk",
+  "_id": "@tbmp/mp-cloud-sdk@1.4.6",
+  "_inBundle": false,
+  "_integrity": "sha1-2fcS4V1M7kAXhbgyEQ8dA0ledFU=",
+  "_location": "/@tbmp/mp-cloud-sdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@tbmp/mp-cloud-sdk",
+    "name": "@tbmp/mp-cloud-sdk",
+    "escapedName": "@tbmp%2fmp-cloud-sdk",
+    "scope": "@tbmp",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.nlark.com/@tbmp/mp-cloud-sdk/download/@tbmp/mp-cloud-sdk-1.4.6.tgz?cache=0&sync_timestamp=1626680059526&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40tbmp%2Fmp-cloud-sdk%2Fdownload%2F%40tbmp%2Fmp-cloud-sdk-1.4.6.tgz",
+  "_shasum": "d9f712e15d4cee401785b832110f1d03495e7455",
+  "_spec": "@tbmp/mp-cloud-sdk",
+  "_where": "D:\\workspace\\project\\InteractiveCollection\\release\\taobaominiapp",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "",
+  "gitHead": "6b8703e0833eee5bfc479fdea0e5dab7d438f42c",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "@tbmp/mp-cloud-sdk",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "./types/platforms/mp/index.d.ts",
+  "version": "1.4.6"
+}

@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_loader_award extends fgui.GLabel {
-
 	public m_frame: fgui.GImage;
 	public m_loader_award: fgui.GLoader;
 	public static URL: string = "ui://aksov0e9m5i8m";

@@ -1,1 +1,1 @@
-{"type":"Scene","props":{"width":640,"name":"gameBox","height":1136},"compId":1,"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":750,"name":"background","height":1334},"compId":21},{"type":"ProgressBar","props":{"y":655,"x":317,"width":116,"value":0.5,"skin":"comp/progress.png","height":24},"compId":24}],"loadList":["comp/progress.png"],"loadList3D":[]}
+{"type":"Scene","props":{"width":640,"name":"gameBox","height":1136},"compId":1,"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":750,"name":"background","height":1334},"compId":21}],"loadList":[],"loadList3D":[]}

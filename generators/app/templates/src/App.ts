@@ -3,7 +3,6 @@ import Config from "./core/config/Config";
 import UIManager from "./core/ui/UIManager";
 import { Platform } from "./enum/enum";
 import DataManager from "./manager/DataManager";
-import SceneManager from "./manager/SceneManager";
 export default class App {
     constructor() {
         this.initConfig();

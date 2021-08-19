@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_btn_common_base extends fgui.GButton {
-
 	public m_status: fgui.Controller;
 	public static URL: string = "ui://aksov0e9m5i810";
 

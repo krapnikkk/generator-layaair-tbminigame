@@ -6,7 +6,6 @@ import UI_loader_avatar from "./UI_loader_avatar";
 import UI_loader_award from "./UI_loader_award";
 
 export default class UI_item_record extends fgui.GComponent {
-
 	public m_ranking: fgui.Controller;
 	public m_prize: fgui.Controller;
 	public m_bg: fgui.GImage;

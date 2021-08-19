@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_list_invitation extends fgui.GComponent {
-
 	public m_status: fgui.Controller;
 	public m_txt_invitation: fgui.GRichTextField;
 	public m_list_invitation: fgui.GList;

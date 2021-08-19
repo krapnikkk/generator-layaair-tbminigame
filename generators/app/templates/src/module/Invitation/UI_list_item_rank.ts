@@ -6,7 +6,6 @@ import UI_loader_avatar from "./UI_loader_avatar";
 import UI_loader_award from "./UI_loader_award";
 
 export default class UI_list_item_rank extends fgui.GComponent {
-
 	public m_txt_number: fgui.GTextField;
 	public m_bg_avatar: fgui.GGraph;
 	public m_loader_avatar: UI_loader_avatar;

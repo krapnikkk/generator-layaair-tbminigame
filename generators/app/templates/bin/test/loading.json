@@ -1,1 +1,0 @@
-{"type":"Scene","props":{"width":640,"runtime":"script/GameUI.ts","name":"gameBox","height":1136},"compId":1,"child":[{"type":"Sprite","props":{"name":"background"},"compId":21},{"type":"ProgressBar","props":{"y":445,"x":262,"value":0.5,"skin":"comp/progress.png"},"compId":23}],"loadList":["comp/progress.png"],"loadList3D":[]}

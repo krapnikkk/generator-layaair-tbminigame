@@ -14,21 +14,9 @@ declare namespace TBMiniProgram {
         readonly avatar: string
     }
 
-    interface IGetAuthUserInfoOptions {
-        /**
-         * 调用成功的回调函数
-         */
-        success?(result: IGetAuthUserInfoSuccessResult): void
+    interface IUnhandledrejectionInputParam {
 
-        /**
-         * 调用失败的回调函数
-         */
-        fail?(): void
-
-        /**
-         * 调用结束的回调函数（调用成功、失败都会执行）
-         */
-        complete?(): void
+        callback?: Function;
     }
 
     export interface my {
@@ -65,6 +53,40 @@ declare namespace TBMiniProgram {
          * - 由于开发者工具版本限制，目前本 API 暂不支持在开发者工具调试和真机调试，仅支持真机预览。开发者请调至 预览 模式，在支付宝客户端扫码查看效果。 
          * - 请勿使用 API 监听匿名函数，否则将无法关闭监听。
          */
-        onAppShow(callback: Function): void
+        onAppHide(callback: Function): void
+
+        /**
+         * 
+         * @param callback 
+         * 基础库 1.20.0 开始支持，低版本需做 兼容处理。 取消监听小程序切后台事件。 
+         * 使用说明： 
+         * - 由于开发者工具版本限制，目前本 API 暂不支持在开发者工具调试和真机调试，仅支持真机预览。开发者请调至 预览 模式，在支付宝客户端扫码查看效果。 
+         * - 请勿使用 API 监听匿名函数，否则将无法关闭监听。
+         */
+        offAppHide(callback: Function): void
+
+        /**
+         * 
+         * @param callback Function  小程序 JS 错误事件的回调函数。
+         * 监听小程序错误事件
+         */
+        onError(callback: Function): void
+
+        /**
+        * 
+        * @param callback Function  小程序 JS 错误事件的回调函数。
+        * 取消监听小程序错误事件
+        */
+        offError(callback: Function): void
+
+        /**
+         * 
+         * @param callback Function  小程序 JS 错误事件的回调函数。
+         * 监听unhandledrejection事件。
+         * 当Promise 被 reject 且没有 reject 处理器时，会触发 unhandledrejection 事件，该事件的回调时机、参数与 App.onUnhandledRejection 的一致。
+         */
+        onUnhandledRejection(inputParam?: IUnhandledrejectionInputParam): void
+
+        
     }
 }

@@ -3,7 +3,7 @@ import UIConfig from "./UIConfig";
 import Config from "../config/Config";
 import Event from "../../Event";
 import UIBase from "./UIBase";
-import InvitationBinder from "../../module/Invitation/InvitationBinder";
+import ModuleManager from "../../module/ModuleManager";
 
 export default class UIManager {
     private static _inst: UIManager;
@@ -41,8 +41,6 @@ export default class UIManager {
         for(let i = 0;i<this._totalResCount;i++){
             let res = UIConfig.fguiFileArr[i];
             let pkgName = res.name;
-            // window[`${pkgName}Binder`]['bindAll']();
-            InvitationBinder.bindAll();
             fgui.UIPackage.loadPackage(`${Config.baseRoot}${pkgName}`, Laya.Handler.create(this, this.onUILoaded));
         }
     }
@@ -51,13 +49,15 @@ export default class UIManager {
         this._loadedCount++;
         Laya.stage.event(Event.ON_PROGRESS,[this._loadedCount,this._totalResCount]);
         if(this._loadedCount == this._totalResCount){
-            console.log("Invitation");
-            let view = new Invitation();
-            view.setup();
-            fgui.GRoot.inst.addChild(view.contentPane);
+            ModuleManager.init();
+            // 加载主场景
+            let component = fgui.UIPackage.createObject(UIConfig.startScene,"Main") as fgui.Window;
+            component.contentPane = component;
+            fgui.GRoot.inst.addChild(component);
         }
-        
     }
+
+    
 
     public add(window: UIBase) {
         this.windowMap.set(window.url, window);

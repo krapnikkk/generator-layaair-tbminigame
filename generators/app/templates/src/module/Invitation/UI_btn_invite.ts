@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_btn_invite extends fgui.GButton {
-
 	public m_scale: fgui.Transition;
 	public static URL: string = "ui://aksov0e9m5i8u";
 

@@ -1,4 +1,4 @@
-// v1.0.0
+// v1.0.1
 const ideModuleDir = global.ideModuleDir;
 const workSpaceDir = global.workSpaceDir;
 
@@ -98,7 +98,7 @@ gulp.task("modifyMinJs_TBWidget", ["modifyFile_TBWidget"], function() {
 });
 
 gulp.task("modifyLibsJs_TBWidget", ["modifyMinJs_TBWidget"], function() {
-	const NONCORESTR = "var window = $global.window;\nvar document = window.document;\nvar XMLHttpRequest = window.XMLHttpRequest;\nvar Laya = window.Laya;\nvar Laya3D = window.Laya3D;\nvar performance = window.performance;\nvar CANNON = window.CANNON;\n";
+	const NONCORESTR = "var window = $global.window;\nvar document = window.document;\nvar XMLHttpRequest = window.XMLHttpRequest;\nvar Laya = window.Laya;\nvar Config = window.Config;\nvar Config3D = window.Config3D;\nvar Laya3D = window.Laya3D;\nvar performance = window.performance;\nvar CANNON = window.CANNON;\n";
 	const CORESTR = "var window = $global.window;\nvar document = window.document;\nvar XMLHttpRequest = window.XMLHttpRequest;\n";
 	// libs
 	let libsPath = path.join(releaseDir, "widget", "component", "libs", config.useMinJsLibs ? "min" : "");

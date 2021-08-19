@@ -5,7 +5,6 @@
 import UI_item_record from "./UI_item_record";
 
 export default class UI_list_rank extends fgui.GComponent {
-
 	public m_status: fgui.Controller;
 	public m_txt_default: fgui.GTextField;
 	public m_list_rank: fgui.GList;

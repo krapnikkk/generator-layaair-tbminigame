@@ -7,7 +7,6 @@ import UI_list_rank from "./UI_list_rank";
 import UI_list_invitation from "./UI_list_invitation";
 
 export default class UI_panel_ranking extends fgui.GComponent {
-
 	public m_tab: fgui.Controller;
 	public m_bg: fgui.GImage;
 	public m_btn_tab_rank: UI_btn_tab_base;

@@ -21,7 +21,7 @@ export class loadPackage implements fgui.IUISource {
 export class UIWindow extends fgui.Window {
     public readonly pkgName: string;
     public readonly resName: string;
-
+    public url: string;
     protected readonly mCloseBtnName = "BtnClose";
 
     constructor(pkgName: string, resName: string) {
@@ -52,5 +52,5 @@ export class UIWindow extends fgui.Window {
         }
     }
 
-    public url: string;
+    
 }

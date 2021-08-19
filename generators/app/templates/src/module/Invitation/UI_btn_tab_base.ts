@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_btn_tab_base extends fgui.GButton {
-
 	public m_triangle: fgui.GImage;
 	public static URL: string = "ui://aksov0e9m5i8c";
 

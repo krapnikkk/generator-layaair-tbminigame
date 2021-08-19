@@ -4,6 +4,9 @@
  */
 export default class UIBase extends fgui.Window{
     public url: string;
+    setup(){
+        
+    }
     onInit(){
         console.log("onInit");
     }

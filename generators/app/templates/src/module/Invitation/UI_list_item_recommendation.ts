@@ -6,7 +6,6 @@ import UI_loader_goods from "./UI_loader_goods";
 import UI_btn_common_base from "./UI_btn_common_base";
 
 export default class UI_list_item_recommendation extends fgui.GComponent {
-
 	public m_bg: fgui.GImage;
 	public m_loader_goods: UI_loader_goods;
 	public m_txt_goodsName: fgui.GTextField;

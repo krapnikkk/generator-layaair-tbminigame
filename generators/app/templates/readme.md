@@ -2,8 +2,7 @@
 双击start.bat文件
 
 ## 版本説明
-LayaAir：2.11.0 [该版本sdk已修复淘宝小程序环境音频播放异常问题]
-fairygui:web端最新 tbminiapp端限定版
+LayaAir：2.12.0 [该版本sdk已修复淘宝小程序环境音频播放异常问题和支持淘宝小部件]
 
 ## vscode工具调试
 项目已自动配置成[vscode工作流](https://ldc2.layabox.com/doc/?nav=zh-ts-3-0-9)
@@ -74,5 +73,16 @@ export default class Demo extends UI_Main{
 }
 ```
 
+#### 项目打包
+命令行发布项目
 
+安装配置，部分由于github原因，需要配置host，[参考](https://github.com/ineo6/hosts)
+```
+npm install 
+```
+
+运行发布
+```
+node build/gulp/bin/gulp.js --gulpfile=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/build/publish.js --config=D:/workspace/project/generator-layaair-tbminigame/generators/app/templates/.laya/taobaominiapp.json publish
+```
 

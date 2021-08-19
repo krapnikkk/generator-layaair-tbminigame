@@ -5,7 +5,6 @@
 import UI_loader_avatar from "./UI_loader_avatar";
 
 export default class UI_list_item_invitation extends fgui.GComponent {
-
 	public m_bg_avatar: fgui.GGraph;
 	public m_loader_avatar: UI_loader_avatar;
 	public m_txt_nickname: fgui.GTextField;

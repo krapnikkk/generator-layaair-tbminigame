@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_panel_date_activity extends fgui.GComponent {
-
 	public m_status: fgui.Controller;
 	public m_txt_count: fgui.GTextField;
 	public m_txt_date: fgui.GTextField;

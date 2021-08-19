@@ -47,7 +47,7 @@
         ""
     ],
     "packfile": false,
-    "keepPlatformFile": true,
+    "keepPlatformFile": false,
     "packfileFilter": [
         ""
     ],
@@ -65,7 +65,7 @@
     "useMinJsLibs": true,
     "es6toes5": true,
     "projectType": "ts",
-    "pubTime": 1626860736634,
+    "pubTime": 1627282585286,
     "taobaoInfo": {
         "orientation": "portrait"
     }

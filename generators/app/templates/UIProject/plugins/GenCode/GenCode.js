@@ -47,9 +47,10 @@ function genCode(handler, isPuerts = true) {
             if (refCount == 0)
                 writer.writeln();
         }
+
         writer.writeln('export default class %s extends %s', classInfo.className, classInfo.superClassName);
+        
         writer.startBlock();
-        writer.writeln();
         let memberCnt = members.Count;
         for (let j = 0; j < memberCnt; j++) {
             let memberInfo = members.get_Item(j);
@@ -136,7 +137,7 @@ function genCode(handler, isPuerts = true) {
         for (let i = 0; i < classCnt; i++) {
             let classInfo = classes.get_Item(i);
             if (classInfo.className == "UI_Main") {
-                writer.writeln('import %s from "../%s";', classInfo.className, codePkgName);
+                writer.writeln('import %s from "../%s";', "UI_Main", codePkgName);
             }
             else {
                 writer.writeln('import %s from "./%s";', classInfo.className, classInfo.className);

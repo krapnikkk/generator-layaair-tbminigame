@@ -4,7 +4,7 @@ export default class Invitation extends UI_Main {
     public view:fairygui.GObject;
     constructor() {
         super();
-        
+        console.log("constructor")
     }
 
     onInit(){
@@ -15,9 +15,9 @@ export default class Invitation extends UI_Main {
         
     }
 
-    setup(){
-        this.contentPane = UI_Main.createInstance(); 
-    }
+    // setup(){
+    //     this.contentPane = UI_Main.createInstance(); 
+    // }
 
     onConstruct(){
         super.onConstruct();

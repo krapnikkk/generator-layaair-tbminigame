@@ -10,9 +10,7 @@ window.screenOrientation = "sensor_landscape";
 //-----libs-begin-----
 // todo 类库按需配置
 loadLib("libs/laya.core.js")
-loadLib("libs/laya.ui.js")
 loadLib("libs/laya.html.js")
-loadLib("libs/laya.physics.js")
-loadLib("libs/fairygui/fairygui.js")
 //-----libs-end-------
+loadLib("libs/fairygui/fairygui.js")
 loadLib("js/bundle.js");

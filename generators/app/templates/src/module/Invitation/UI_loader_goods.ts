@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export default class UI_loader_goods extends fgui.GLabel {
-
 	public m_mask: fgui.GImage;
 	public static URL: string = "ui://aksov0e9m5i8z";
 
