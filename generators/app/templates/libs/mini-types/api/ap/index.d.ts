@@ -604,5 +604,6 @@ declare namespace TBMiniProgram {
              */
             navigateToAlipayPage(options: INavigateToAlipayPageOptions): void;
         };
+        tb:TBMiniProgram.tb
     }
 }

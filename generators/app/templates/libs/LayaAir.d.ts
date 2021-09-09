@@ -58,6 +58,11 @@
 		 * 是否允许GPUInstance动态合并,仅对3D有效。
 		 */
 		static allowGPUInstanceDynamicBatch:boolean;
+
+		/**
+		 * 是否允许静态合并
+		 */
+		static enableStaticBatch:boolean;
 		static useRetinalCanvas:boolean;
 	}
 
@@ -67,6 +72,10 @@
 	declare class Config3D implements Laya.IClone  {
 		static get useCannonPhysics():boolean;
 		static set useCannonPhysics(value:boolean);
+		static set enableDynamicManager(value:boolean);
+		static get enableDynamicManager():boolean;
+		static set enableStaticManager(value:boolean);
+		static get enableStaticManager():boolean;
 
 		/**
 		 * 是否开启抗锯齿。
@@ -335,11 +344,6 @@
 		 * SimpleAnimator资源。
 		 */
 		static SIMPLEANIMATORBIN:string;
-
-		/**
-		 * @private 
-		 */
-		static physicsSettings:Laya.PhysicsSettings;
 
 		/**
 		 * 获取是否可以启用物理。
@@ -2351,12 +2355,22 @@ declare module Laya {
 		 */
 		get speed():number;
 		set speed(value:number);
+		get controllerLayerCount():number;
 
 		/**
 		 * 创建一个 <code>Animation</code> 实例。
 		 */
 
 		constructor();
+
+		/**
+		 * 赋值Node数据
+		 * @param stateInfo 动画状态
+		 * @param additive 是否为addtive
+		 * @param weight state权重
+		 * @param isFirstLayer 是否是第一层
+		 */
+		private _setClipDatasToNode:any;
 
 		/**
 		 * 获取默认动画状态。
@@ -2475,6 +2489,12 @@ declare module Laya {
 		 */
 		get defaultState():AnimatorState;
 		set defaultState(value:AnimatorState);
+
+		/**
+		 * 骨骼遮罩
+		 */
+		get avatarMask():AvatarMask;
+		set avatarMask(value:AvatarMask);
 
 		/**
 		 * 创建一个 <code>AnimatorControllerLayer</code> 实例。
@@ -2666,6 +2686,44 @@ declare module Laya {
 	}
 
 	/**
+	 * 用来描述动画层遮罩
+	 */
+	class AvatarMask  {
+		private _catchAnimator:any;
+
+		/**
+		 * 创建一个<code>AvatarMask</code>实例
+		 */
+
+		constructor(animator:Animator);
+
+		/**
+		 * 获得动态
+		 */
+		get getCatchAnimator():Animator;
+
+		/**
+		 * 查找节点路径遮罩
+		 * @param path 
+		 * @returns 
+		 */
+		getTransformActive(path:string):boolean;
+
+		/**
+		 * 设置
+		 * @param path 
+		 * @param value 
+		 */
+		setTransformActive(path:string,value:boolean):void;
+
+		/**
+		 * 获得遮罩信息
+		 * @returns 
+		 */
+		getAllTranfromPath():{[key:string]:boolean;};
+	}
+
+	/**
 	 * <code>PostProcess</code> 类用于创建后期处理组件。
 	 */
 	class PostProcess  {
@@ -2849,6 +2907,7 @@ declare module Laya {
 		 */
 
 		constructor();
+		clearElement():void;
 	}
 
 	/**
@@ -3222,10 +3281,12 @@ enum CameraEventFlags {
 
 		/**
 		 * 根据相机、scene信息获得scene中某一位置的渲染结果
-		 * @param camera 
-		 * @param scene 
+		 * @param camera 相机
+		 * @param scene 需要渲染的场景
+		 * @param shader 着色器
+		 * @param replacementTag 替换标记。
 		 */
-		static drawRenderTextureByScene(camera:Camera,scene:Scene3D,renderTexture:RenderTexture):RenderTexture;
+		static drawRenderTextureByScene(camera:Camera,scene:Scene3D,renderTexture:RenderTexture,shader?:Shader3D,replacementTag?:string):RenderTexture;
 
 		/**
 		 * 深度贴图
@@ -3334,6 +3395,7 @@ enum CameraEventFlags {
 		 * @return 是否显示。
 		 */
 		_isLayerVisible(layer:number):boolean;
+		clone():Camera;
 
 		/**
 		 * 调用渲染命令流
@@ -3992,11 +4054,6 @@ enum ShadowMode {
 		 * 默认材质，禁止修改
 		 */
 		static defaultMaterial:BlinnPhongMaterial;
-		private _albedoColor:any;
-		private _albedoIntensity:any;
-		private _enableLighting:any;
-		private _enableVertexColor:any;
-		private _enableTransmission:any;
 		set _ColorR(value:number);
 		set _ColorG(value:number);
 		set _ColorB(value:number);
@@ -4007,7 +4064,6 @@ enum ShadowMode {
 		set _SpecColorB(value:number);
 		set _SpecColorA(value:number);
 		set _SpecColor(value:Vector4);
-		set _AlbedoIntensity(value:number);
 		set _Shininess(value:number);
 		set _MainTex_STX(x:number);
 		set _MainTex_STY(y:number);
@@ -4223,7 +4279,6 @@ enum ShadowMode {
 		 * 默认材质，禁止修改
 		 */
 		static defaultMaterial:EffectMaterial;
-		private _color:any;
 		set _TintColorR(value:number);
 		set _TintColorG(value:number);
 		set _TintColorB(value:number);
@@ -4527,6 +4582,16 @@ enum ShadowMode {
 		set depthTest(value:number);
 
 		/**
+		 * 获得材质属性
+		 */
+		get MaterialProperty():any;
+
+		/**
+		 * 获得材质宏
+		 */
+		get MaterialDefine():Array<string>;
+
+		/**
 		 * 创建一个 <code>BaseMaterial</code> 实例。
 		 */
 
@@ -4543,6 +4608,19 @@ enum ShadowMode {
 		 * @param name 名称。
 		 */
 		setShaderName(name:string):void;
+
+		/**
+		 * 设置属性值
+		 * @param name 
+		 * @param value 
+		 */
+		setShaderPropertyValue(name:string,value:any):void;
+
+		/**
+		 * 获取属性值
+		 * @param name 
+		 */
+		getShaderPropertyValue(name:string):any;
 
 		/**
 		 * 克隆。
@@ -5228,9 +5306,7 @@ enum PBRMetallicSmoothnessSource {
 		 * 默认材质，禁止修改
 		 */
 		static defaultMaterial:UnlitMaterial;
-		private _albedoColor:any;
 		private _albedoIntensity:any;
-		private _enableVertexColor:any;
 		set _ColorR(value:number);
 		set _ColorG(value:number);
 		set _ColorB(value:number);
@@ -8256,6 +8332,7 @@ enum ReflectionProbeMode {
 		 * [实现ISingletonElement接口]
 		 */
 		_setIndexInList(index:number):void;
+		_setUnBelongScene():void;
 
 		/**
 		 * 标记为非静态,静态合并后可用于取消静态限制。
@@ -8550,7 +8627,7 @@ enum ReflectionProbeMode {
 		 * @param shaderData 着色器数据,如果为null只接收sourceTexture。
 		 * @param subShader subShader索引,默认值为0。
 		 */
-		blitScreenQuad(source:BaseTexture,dest:RenderTexture,offsetScale?:Vector4,shader?:Shader3D,shaderData?:ShaderData,subShader?:number):void;
+		blitScreenQuad(source:BaseTexture,dest:RenderTexture,offsetScale?:Vector4,shader?:Shader3D,shaderData?:ShaderData,subShader?:number,definedCanvas?:boolean):void;
 
 		/**
 		 * 添加一条通过全屏四边形将源纹理渲染到目标渲染纹理指令。
@@ -9080,6 +9157,7 @@ enum ShaderDataType {
 		 */
 
 		constructor(octree:BoundsOctree,parent:BoundsOctreeNode,baseLength:number,center:Vector3);
+		private _getCollidingWithCastShadowFrustum:any;
 
 		/**
 		 * 添加指定物体。
@@ -9137,6 +9215,7 @@ enum ShaderDataType {
 		 * @param result 相交物体列表。
 		 */
 		getCollidingWithFrustum(cameraCullInfo:CameraCullInfo,context:RenderContext3D,customShader:Shader3D,replacementTag:string,isShadowCasterCull:boolean):void;
+		getCollidingWithCastShadowFrustum(cameraCullInfo:ShadowCullInfo,contect:RenderContext3D):void;
 
 		/**
 		 * 获取是否与指定包围盒相交。
@@ -9656,6 +9735,11 @@ enum AmbientMode {
 		/**
 		 */
 		_setCreateURL(url:string):void;
+
+		/**
+		 * @private 
+		 */
+		protected _onInActiveInScene():void;
 
 		/**
 		 * @inheritDoc 
@@ -10346,6 +10430,17 @@ enum DepthTextureMode {
 		 * 遮挡标记
 		 */
 		cullingMask:number;
+	}
+
+	/**
+	 * 阴影裁剪数据
+	 */
+	class ShadowCullInfo  {
+		position:Vector3;
+		cullPlanes:Plane[];
+		cullSphere:BoundSphere;
+		cullPlaneCount:number;
+		direction:Vector3;
 	}
 
 	/**
@@ -14305,13 +14400,6 @@ enum IndexFormat {
 	}
 
 	/**
-	 * Laya物理类
-	 * internal
-	 */
-	class Physics3D  {
-	}
-
-	/**
 	 * <code>PhysicsCollider</code> 类用于创建物理碰撞器。
 	 */
 	class PhysicsCollider extends PhysicsTriggerComponent  {
@@ -15083,6 +15171,13 @@ enum IndexFormat {
 		 * @override 
 		 */
 		clone():any;
+	}
+
+	/**
+	 * Laya物理类
+	 * internal
+	 */
+	class Physics3D  {
 	}
 
 	/**
@@ -16136,12 +16231,17 @@ enum IndexFormat {
 		/**
 		 * 从对象池获取临时渲染目标。
 		 */
-		static createFromPool(width:number,height:number,format?:number,depthStencilFormat?:number):RenderTexture;
+		static createFromPool(width:number,height:number,format?:number,depthStencilFormat?:number,mulSamples?:number):RenderTexture;
 
 		/**
 		 * 回收渲染目标到对象池,释放后可通过createFromPool复用。
 		 */
 		static recoverToPool(renderTexture:RenderTexture):void;
+
+		/**
+		 * @inrernal 是否使用多重采样
+		 */
+		private _mulSamplerRT:any;
 
 		/**
 		 * 深度格式。
@@ -16152,6 +16252,7 @@ enum IndexFormat {
 		 * @override 
 		 */
 		get defaulteTexture():BaseTexture;
+		get mulSampler():number;
 
 		/**
 		 * @param width 宽度。
@@ -16160,7 +16261,7 @@ enum IndexFormat {
 		 * @param depthStencilFormat 深度格式。创建一个 <code>RenderTexture</code> 实例。
 		 */
 
-		constructor(width:number,height:number,format?:RenderTextureFormat,depthStencilFormat?:RenderTextureDepthFormat);
+		constructor(width:number,height:number,format?:RenderTextureFormat,depthStencilFormat?:RenderTextureDepthFormat,mulSampler?:number);
 
 		/**
 		 * 获得像素数据。
@@ -16170,7 +16271,7 @@ enum IndexFormat {
 		 * @param height 高度。
 		 * @return 像素数据。
 		 */
-		getData(x:number,y:number,width:number,height:number,out:Uint8Array):Uint8Array;
+		getData(x:number,y:number,width:number,height:number,out:Uint8Array|Float32Array):Uint8Array|Float32Array;
 
 		/**
 		 * @inheritDoc 
@@ -16693,6 +16794,8 @@ enum TextureCubeFace {
 		 * @return 纹理。
 		 */
 		getTexture(index:number):BaseTexture;
+		setValueData(index:number,value:any):void;
+		getValueData(index:number):any;
 
 		/**
 		 * 设置Attribute。
@@ -17342,6 +17445,7 @@ enum ShadowLightType {
 		 * @param e 目标数据
 		 */
 		static quaternionWeight(f:Quaternion,weight:number,e:Quaternion):void;
+		static uint8ArrayToArrayBuffer(rendertexture:RenderTexture):String;
 	}
 
 	/**
@@ -29579,7 +29683,7 @@ enum HTMLElementType {
 		 * @param cache 是否缓存加载的资源。
 		 * @return 如果url为数组，返回true；否则返回指定的资源类对象。
 		 */
-		create(url:any,complete?:Handler|null,progress?:Handler|null,type?:string|null,constructParams?:any[]|null,propertyParams?:any,priority?:number,cache?:boolean):void;
+		create(url:string|(string | createItem)[],complete?:Handler|null,progress?:Handler|null,type?:string|null,constructParams?:any[]|null,propertyParams?:any,priority?:number,cache?:boolean):void;
 
 		/**
 		 * @private 
@@ -29600,7 +29704,7 @@ enum HTMLElementType {
 		 * @param useWorkerLoader (default = false)是否使用worker加载（只针对IMAGE类型和ATLAS类型，并且浏览器支持的情况下生效）
 		 * @return 此 LoaderManager 对象本身。
 		 */
-		load(url:string|string[]|loadItem[],complete?:Handler|null,progress?:Handler|null,type?:string|null,priority?:number,cache?:boolean,group?:string|null,ignoreCache?:boolean,useWorkerLoader?:boolean):LoaderManager;
+		load(url:string|(string | loadItem)[],complete?:Handler|null,progress?:Handler|null,type?:string|null,priority?:number,cache?:boolean,group?:string|null,ignoreCache?:boolean,useWorkerLoader?:boolean):LoaderManager;
 		private _resInfoLoaded:any;
 		private _next:any;
 		private _doLoad:any;
@@ -29688,6 +29792,29 @@ enum HTMLElementType {
 	}
 
 	interface loadItem{
+	}
+
+
+	interface createItem{
+		url:string;
+
+		/**
+		 * 资源类型
+		 */
+		type?:string;
+		priority?:number;
+		group?:string;
+
+		/**
+		 * 资源属性参数。
+		 */
+		propertyParams?:any[];
+
+		/**
+		 * 资源构造函数参数。
+		 */
+		constructParams?:any[];
+		progress?:number;
 	}
 
 
@@ -31233,6 +31360,12 @@ enum HTMLElementType {
 		 */
 		get joint():any;
 		protected _createJoint():void;
+
+		/**
+		 * 获取是否为单实例组件。
+		 * @override 
+		 */
+		get isSingleton():boolean;
 	}
 
 	/**
@@ -33928,6 +34061,11 @@ enum RenderTextureDepthFormat {
 		static blackTexture:Texture2D;
 
 		/**
+		 * 错误纹理
+		 */
+		static erroTextur:Texture2D;
+
+		/**
 		 * 加载Texture2D。
 		 * @param url Texture2D地址。
 		 * @param complete 完成回掉。
@@ -34011,8 +34149,12 @@ enum TextureFormat {
     DXT5 = 4,
     /**纹理格式_ETC2RGB。*/
     ETC1RGB = 5,
+    ETC2RGB = 6,
+    ETC2RGBA = 7,
     /**纹理格式_ETC2RGB_PUNCHTHROUGHALPHA。*/
     /**纹理格式_PVRTCRGB_2BPPV。*/
+    ETC2RGB_Alpha8 = 8,
+    ETC2SRGB = 28,
     PVRTCRGB_2BPPV = 9,
     /**纹理格式_PVRTCRGBA_2BPPV。*/
     PVRTCRGBA_2BPPV = 10,
@@ -34023,7 +34165,28 @@ enum TextureFormat {
     /**RGBA格式纹理,每个通道32位浮点数。*/
     R32G32B32A32 = 15,
     /**RGBA格式纹理，每个通道16位浮点数。 */
-    R16G16B16A16 = 17
+    R16G16B16A16 = 17,
+    /**ASTC 4x4*/
+    ASTC4x4 = 18,
+    /**ASTC sRGB 4x4 */
+    ASTC4x4SRGB = 23,
+    /**ASTC 6x6*/
+    ASTC6x6 = 19,
+    /**ASTC  6x6*/
+    ASTC6x6SRGB = 24,
+    /**ASTC 8x8 */
+    ASTC8x8 = 20,
+    ASTC8x8SRGB = 25,
+    /**ASTC 10x10 */
+    ASTC10x10 = 21,
+    ASTC10x10SRGB = 26,
+    /**ASTC 12x12 */
+    ASTC12x12 = 22,
+    ASTC12x12SRGB = 27,
+    /**ktx图片 */
+    KTXTEXTURE = -1,
+    /**pvr图片 */
+    PVRTEXTURE = -2
 }
 
 	/**
@@ -39717,6 +39880,11 @@ enum WarpMode {
 		get width():number;
 
 		/**
+		 * 兼容以前的changeItems逻辑，是否在发生变动时，使用 sortItem 排序所有item
+		 */
+		isSortItem:boolean;
+
+		/**
 		 * @inheritDoc 
 		 * @override 
 		 */
@@ -42161,6 +42329,36 @@ enum WarpMode {
 		 * 显示鼠标
 		 */
 		static show():void;
+	}
+	class PerformancePlugin  {
+		static _enable:boolean;
+		static PERFORMANCE_LAYA:string;
+		static PERFORMANCE_LAYA_3D:string;
+		static PERFORMANCE_LAYA_2D:string;
+		static PERFORMANCE_LAYA_3D_PRERENDER:string;
+		static PERFORMANCE_LAYA_3D_UPDATESCRIPT:string;
+		static PERFORMANCE_LAYA_3D_PHYSICS:string;
+		static PERFORMANCE_LAYA_3D_PHYSICS_SIMULATE:string;
+		static PERFORMANCE_LAYA_3D_PHYSICS_CHARACTORCOLLISION:string;
+		static PERFORMANCE_LAYA_3D_PHYSICS_EVENTSCRIPTS:string;
+		static PERFORMANCE_LAYA_3D_RENDER:string;
+		static PERFORMANCE_LAYA_3D_RENDER_SHADOWMAP:string;
+		static PERFORMANCE_LAYA_3D_RENDER_CLUSTER:string;
+		static PERFORMANCE_LAYA_3D_RENDER_CULLING:string;
+		static PERFORMANCE_LAYA_3D_RENDER_RENDERDEPTHMDOE:string;
+		static PERFORMANCE_LAYA_3D_RENDER_RENDEROPAQUE:string;
+		static PERFORMANCE_LAYA_3D_RENDER_RENDERCOMMANDBUFFER:string;
+		static PERFORMANCE_LAYA_3D_RENDER_RENDERTRANSPARENT:string;
+		static PERFORMANCE_LAYA_3D_RENDER_POSTPROCESS:string;
+		static setPerformanceDataTool(tool:any):void;
+		static begainSample(path:string):void;
+		static endSample(path:string):number;
+		static expoertFile(path:string):any;
+		static showFunSampleFun(path:string):void;
+		static set enable(value:boolean);
+		static get enable():boolean;
+		static set enableDataExport(value:boolean);
+		static get enableDataExport():boolean;
 	}
 
 	/**

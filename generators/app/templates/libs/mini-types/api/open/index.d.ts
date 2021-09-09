@@ -7,4 +7,5 @@
 /// <reference path="./zhima.d.ts" />
 /// <reference path="./text.d.ts" />
 /// <reference path="./navigate.d.ts" />
+/// <reference path="./navigateToTaobaoPage.d.ts" />
 /// <reference path="./webview.d.ts" />

@@ -21,14 +21,9 @@ declare namespace TBMiniProgram {
 
     export interface my {
         /**
-       * 监听小程序切前台事件。
-       */
-        onShow(callback: Function): void
-
-
-        /**
+         * 监听小程序切前台事件
          * @param callback 
-         * 监听小程序切前台事件，该事件与 App.onShow 的回调时机一致。对应的取消监听 API 请参见 my.offAppShow。 
+         * 该事件与 App.onShow 的回调时机一致。对应的取消监听 API 请参见 my.offAppShow。 
          * 使用说明： 
          * - 由于开发者工具版本限制，目前本 API 暂不支持在开发者工具调试和真机调试，仅支持真机预览。开发者请调至 预览 模式，在支付宝客户端扫码查看效果。 
          * - 请勿使用 API 监听匿名函数，否则将无法关闭监听。
@@ -45,10 +40,9 @@ declare namespace TBMiniProgram {
         offAppShow(callback: Function): void
 
         /**
-         * 
+         * 监听小程序切后台事件
          * @param callback 
-         * 该事件与 App.onHide 的回调时机一致。
-         * 对应的取消监听 API 请参见 my.offAppHide。 
+         * 该事件与 App.onHide 的回调时机一致。对应的取消监听 API 请参见 my.offAppHide。 
          * 使用说明： 
          * - 由于开发者工具版本限制，目前本 API 暂不支持在开发者工具调试和真机调试，仅支持真机预览。开发者请调至 预览 模式，在支付宝客户端扫码查看效果。 
          * - 请勿使用 API 监听匿名函数，否则将无法关闭监听。
@@ -56,7 +50,7 @@ declare namespace TBMiniProgram {
         onAppHide(callback: Function): void
 
         /**
-         * 
+         * 监听小程序切后台事件
          * @param callback 
          * 基础库 1.20.0 开始支持，低版本需做 兼容处理。 取消监听小程序切后台事件。 
          * 使用说明： 

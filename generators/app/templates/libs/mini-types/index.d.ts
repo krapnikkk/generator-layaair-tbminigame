@@ -7,4 +7,4 @@
 /// <reference path="./global.d.ts" />
 /// <reference path="./event.d.ts" />
 
-declare const my: TBMiniProgram.my;
+declare let my: TBMiniProgram.my;
